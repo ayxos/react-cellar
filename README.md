@@ -19,6 +19,10 @@ This is an initial version of this setup and will be expanded in the future. Ref
 
 ### Planned work
 
+* Better support for custom typings (so we don't have to commit typings to the repo)
+* Test examples (spec & unit)
+* Component `displayName`, `propTypes`, `defaultProps` and documentation
+* Auto-reloading API server (when specified)
 * Enforce single-quotes for TS code and double-quotes for JSX.
   - ref: https://github.com/palantir/tslint/issues/673
 
