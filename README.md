@@ -7,7 +7,7 @@ This is the initial version of our starter project using React, TypeScript and W
 * `npm install`: install npm dependencies specified in package.json as well as typings specified in tsd.json (typings will be put into *typings* folder which is also git ignored).
 * `postinstall`: runs automatically after `npm install` and triggers a `npm run build` to provide a build directory to `npm start` by default
 
-* `npm run dev`: will start webpack's development server (with live reloading) on [http://localhost:8080](http://localhost:8080). Note that in this case the bundle will be generated in memory and your bundle in *dist* might get out of sync.
+* `npm run dev`: will start a development server (with live reloading) on [http://localhost:3000](http://localhost:3000). Note that in this case the bundle will be generated in memory and your bundle in *dist* might get out of sync.
 * `npm start`: starts a production server serving the *dist* directory on [http://localhost:3000](http://localhost:3000)
 
 * `npm run build`: bundle all of the application including js/css/html files, with index.html generated according to a template specified in *index.html* (Everything will be put into *dist* folder).
