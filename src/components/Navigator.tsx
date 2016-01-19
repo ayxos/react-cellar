@@ -13,9 +13,7 @@ const Navigator = ({ children }) => {
 };
 
 const styles = {
-  base: {
-    height: '10rem',
-  },
+  base: {},
 };
 
 
