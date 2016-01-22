@@ -12,6 +12,8 @@ This is the initial version of our starter project using React, TypeScript and W
 
 * `npm run build`: bundle all of the application including js/css/html files, with index.html generated according to a template specified in *index.html* (Everything will be put into *dist* folder).
 
+> Note: Demo username/password can be found [here](https://github.com/rangle/typescript-react-redux-starter/blob/master/src/api/mock/users.tsx)
+
 
 ## Improvements
 
