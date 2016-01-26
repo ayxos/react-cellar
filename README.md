@@ -33,3 +33,15 @@ This is an initial version of this setup and will be expanded in the future. Ref
 ## If something doesn't work
 
 Refer to the [issues section](https://github.com/rangle/typescript-react-redux-starter/issues) to see if this has already been logged. Otherwise create a [new issue](https://github.com/rangle/typescript-react-redux-starter/issues/new).
+
+## Want to deploy on Heroku?  Read this.
+
+By default, Heroku's node stack runs `npm install --production`, which ignores the  `devDependencies`
+section of your `package.json`. The convention in these cases is that only what is necessary 
+for the actual production run should be in `dependencies`.
+
+However this is at odds with modern JS bundlers like webpack, where almost everything is a `devDependency`;
+because Heroku does not separate the build and run environments, its default setup isn't the
+best fit.
+
+Here is a workaround: https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process
