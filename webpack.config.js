@@ -17,7 +17,8 @@ const appEntries = baseAppEntries
 
 const basePlugins = [
   new webpack.DefinePlugin({
-    __DEV__: process.env.NODE_ENV !== 'production'
+    __DEV__: process.env.NODE_ENV !== 'production',
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
   new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[hash].js'),
   new HtmlWebpackPlugin({
