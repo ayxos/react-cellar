@@ -2,15 +2,22 @@ const objectAssign = require('object-assign');
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { browserHistory } from 'react-router';
-import { syncHistory, routeReducer } from 'redux-simple-router';
+import { syncHistory, routeReducer } from 'react-router-redux';
 const persistState = require('redux-localstorage');
 const thunk = require('redux-thunk');
 import promiseMiddleware from '../middleware/promiseMiddleware';
 import logger from './logger';
 import rootReducer from '../reducers';
 
+// webpack-hot-loader sets some extra attributes on node's `module` if that
+// module has been hot-loaded in the browser.
+interface HotNodeModule extends NodeModule {
+ hot: { accept: Function };
+};
 
-declare var __DEV__: string;
+// This global is used to turn on redux dev tools when in dev mode.
+let __DEV__: string;
+declare let module: HotNodeModule;
 
 const reduxRouterMiddleware = syncHistory(browserHistory);
 
