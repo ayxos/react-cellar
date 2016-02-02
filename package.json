@@ -14,7 +14,7 @@
     "node": "4.x"
   },
   "scripts": {
-    "postinstall": "npm run typings && npm run build",
+    "postinstall": "npm run clean; npm run typings && npm run build",
     "dev": "NODE_ENV=development node server.js",
     "start": "NODE_ENV=production node server.js",
     "clean": "rimraf dist",
