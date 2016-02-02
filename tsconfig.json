@@ -14,5 +14,9 @@
   "exclude": [
     "node_modules",
     "app/__build"
+  ],
+  "files": [
+    "typings/main.d.ts",
+    "node_modules/immutable/dist/immutable.d.ts"
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "ambientDependencies": {
+    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#99f6493ffb1ef5479c6154ec9f82a47178bbf8b6",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#1c56e368e17bb28ca57577250624ca5bd561aa81",
+    "object-assign": "github:DefinitelyTyped/DefinitelyTyped/object-assign/object-assign.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e",
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#81b951f1ac437d1eb5ff5171a0bfa6c467634b13",
+    "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "react-router": "github:DefinitelyTyped/DefinitelyTyped/react-router/react-router.d.ts#62eff42bd835c8c0f93cc15e4c5ae444164e5008",
+    "react-router-redux": "github:DefinitelyTyped/DefinitelyTyped/react-router-redux/react-router-redux.d.ts#e6236157ce37fe1c8f2e3babd0bee364d8788c8b",
+    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "redux-form": "github:DefinitelyTyped/DefinitelyTyped/redux-form/redux-form.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "redux-logger": "github:DefinitelyTyped/DefinitelyTyped/redux-logger/redux-logger.d.ts#7136728255d96038795d93c3e4b43c3c7de8ac1e",
+    "redux-thunk": "github:DefinitelyTyped/DefinitelyTyped/redux-thunk/redux-thunk.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
+    "webpack": "github:DefinitelyTyped/DefinitelyTyped/webpack/webpack.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e"
+  }
+}
