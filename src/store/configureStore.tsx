@@ -1,8 +1,7 @@
-const objectAssign = require('object-assign');
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { browserHistory } from 'react-router';
-import { syncHistory, routeReducer } from 'react-router-redux';
+import { syncHistory } from 'react-router-redux';
 const persistState = require('redux-localstorage');
 const thunk = require('redux-thunk');
 import promiseMiddleware from '../middleware/promiseMiddleware';
@@ -32,10 +31,6 @@ const storageConfig = {
   }),
 };
 
-const reducers = objectAssign({}, rootReducer, {
-  routing: routeReducer,
-});
-
 function configureStore(initialState) {
   const store = compose(
   __DEV__
@@ -47,9 +42,6 @@ function configureStore(initialState) {
   if (module.hot) {
     module.hot.accept('../reducers', () => {
       const nextRootReducer = require('../reducers');
-      const nextReducers = objectAssign({}, rootReducer, {
-        routing: routeReducer,
-      });
       store.replaceReducer(nextRootReducer);
     });
   }
