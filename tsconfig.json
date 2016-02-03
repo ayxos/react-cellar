@@ -13,10 +13,8 @@
   },
   "exclude": [
     "node_modules",
-    "app/__build"
-  ],
-  "files": [
-    "typings/main.d.ts",
-    "node_modules/immutable/dist/immutable.d.ts"
+    "dist",
+    "typings/main",
+    "typings/main.d.ts"
   ]
 }

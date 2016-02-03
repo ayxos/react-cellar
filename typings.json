@@ -2,6 +2,7 @@
   "ambientDependencies": {
     "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
     "history": "github:DefinitelyTyped/DefinitelyTyped/react-router/history.d.ts#99f6493ffb1ef5479c6154ec9f82a47178bbf8b6",
+    "immutable": "npm:immutable/dist/immutable.d.ts",
     "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#1c56e368e17bb28ca57577250624ca5bd561aa81",
     "object-assign": "github:DefinitelyTyped/DefinitelyTyped/object-assign/object-assign.d.ts#70bf7e2bfeb0d5b1b651ef3219bcc65c8eec117e",
     "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#6eebd5e90a1cbd6b47b0705ba72dbcd5baf846f3",
