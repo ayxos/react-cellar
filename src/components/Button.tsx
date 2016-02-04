@@ -2,15 +2,13 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const Button = (props) => {
-  const {
-    children,
-    className = '',
-    style = {},
-    type = 'button',
-    onClick,
-  } = props;
-
+const Button = ({
+  children = null,
+  className = '',
+  style = {},
+  type = 'button',
+  onClick = null,
+}) => {
   return (
     <button
       type={ type }

@@ -1,8 +1,7 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 
-
-const Modal = ({ isVisible, children, style = {} }) => {
+const Modal = ({ isVisible = false, children = null, style = {} }) => {
   const visibleStyle = isVisible ? styles.visible : styles.hidden;
 
   return (

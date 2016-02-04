@@ -2,7 +2,7 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const ModalContent = ({ children, style = {}, className = '' }) => {
+const ModalContent = ({ children = null, style = {}, className = '' }) => {
   return (
     <div
       className={ `${ className } p1 z4 bg-white` }

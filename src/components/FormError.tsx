@@ -2,7 +2,12 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const FormError = ({ children, isVisible, style = {}, className = ''}) => {
+const FormError = ({
+  children = null,
+  isVisible,
+  style = {},
+  className = ''
+}) => {
   const visibleClass = isVisible ? 'block' : 'hide';
 
   return (

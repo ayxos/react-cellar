@@ -2,7 +2,7 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const Content = ({ children, style = {}, isVisible }) => {
+const Content = ({ children = null, style = {}, isVisible }) => {
   return (
     <div
       className={ `mt3 p1` }

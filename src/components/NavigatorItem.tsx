@@ -1,7 +1,11 @@
 import * as React from 'react';
 
 
-const NavigatorItem = ({ children, isVisible = true, className = '' }) => {
+const NavigatorItem = ({
+  children = null,
+  isVisible = true,
+  className = ''
+}) => {
   const visibleClass = isVisible ? 'block' : 'hide';
 
   return (

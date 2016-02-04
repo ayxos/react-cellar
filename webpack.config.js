@@ -75,11 +75,11 @@ module.exports = {
 
   module: {
     preLoaders: [{
-      test: /\.tsx?$/,
+      test: /\.ts[x]?$/,
       loader: 'tslint'
     }],
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
+      { test: /\.ts[x]?$/, loader: 'ts-loader', exclude: /node_modules/ },
       { test: /\.html$/, loader: 'raw' },
       { test: /\.css$/, loader: 'style-loader!css-loader?sourceMap' },
       { test: /\.svg/, loader: 'url' },

@@ -9,7 +9,7 @@ const componentColor = {
   error: 'bg-red white',
 };
 
-const Alert = ({ children, isVisible, status = 'info', className = '',
+const Alert = ({ children = null, isVisible, status = 'info', className = '',
                  style = {} }) => {
   const visibleClass = isVisible ? 'block' : 'hide';
 

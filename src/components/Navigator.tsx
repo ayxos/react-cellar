@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-const Navigator = ({ children }) => {
+const Navigator = ({ children = null }) => {
   return (
     <div
       className="flex flex-stretch flex-center p1 bg-white black border-bottom\
