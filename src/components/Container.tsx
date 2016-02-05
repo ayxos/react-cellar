@@ -2,7 +2,7 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const Container = ({ children, style = {}, className = '' }) => {
+const Container = ({ children = null, style = {}, className = '' }) => {
   return (
     <div className={ `container ${ className }` }
          style={ objectAssign({}, styles.base, style) }>

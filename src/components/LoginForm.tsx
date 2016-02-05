@@ -23,18 +23,16 @@ const validate = values => {
   return errors;
 };
 
-const LoginForm = (props) => {
-  const {
-    handleSubmit,
-    resetForm,
-    isPending,
-    hasError,
-    fields: {
-      username,
-      password,
-    },
-  } = props;
-
+const LoginForm = ({
+  handleSubmit,
+  resetForm,
+  isPending,
+  hasError,
+  fields: {
+    username,
+    password,
+  }
+}) => {
   return (
     <Form handleSubmit={ handleSubmit }>
       <Alert isVisible={ isPending }>Loading...</Alert>

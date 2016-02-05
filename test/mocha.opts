@@ -1,0 +1,4 @@
+--compilers ts:ts-node/register
+--compilers tsx:ts-node/register
+--require ./test/entry.tsx
+**/*.test.tsx

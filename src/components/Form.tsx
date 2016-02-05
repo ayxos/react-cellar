@@ -2,7 +2,7 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const Form = ({ children, style = {}, handleSubmit }) => {
+const Form = ({ children = null, style = {}, handleSubmit }) => {
   return (
     <form
       style={ objectAssign({}, styles.base, style) }

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from './Button';
 
 
-const Counter = ({ counter, increment, decrement }) => {
+const Counter = ({ counter = null, increment, decrement }) => {
   return (
     <div className="flex">
       <div className="flex-auto flex-center center">

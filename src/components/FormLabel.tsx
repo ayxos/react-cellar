@@ -2,7 +2,7 @@ import * as React from 'react';
 const objectAssign = require('object-assign');
 
 
-const FormLabel = ({ children, style = {} }) => {
+const FormLabel = ({ children = null, style = {} }) => {
   return (
     <label style={ objectAssign({}, styles.base, style) }>
       { children }
