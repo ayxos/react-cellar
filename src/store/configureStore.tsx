@@ -15,7 +15,7 @@ interface HotNodeModule extends NodeModule {
 };
 
 // This global is used to turn on redux dev tools when in dev mode.
-let __DEV__: string;
+declare let __DEV__: boolean;
 declare let module: HotNodeModule;
 
 const reduxRouterMiddleware = syncHistory(browserHistory);
