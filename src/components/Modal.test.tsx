@@ -9,7 +9,7 @@ import Modal from './Modal';
 declare var global: {
   document: Document,
   window: Window
-}
+};
 
 describe('Modal Component', () => {
   beforeEach(() => {

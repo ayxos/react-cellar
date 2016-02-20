@@ -30,7 +30,11 @@ describe('Session Reducer', () => {
 
   describe('on LOGIN_USER_SUCCESS', () => {
     it('should save the username', () => {
-      state = fireAction(sessionReducer, state, LOGIN_USER_SUCCESS, { token: 1234 });
+      state = fireAction(
+        sessionReducer,
+        state,
+        LOGIN_USER_SUCCESS,
+        { token: 1234 });
 
       assert(!state.get('isLoading'));
       assert(!state.get('hasError'));
