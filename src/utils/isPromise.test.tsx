@@ -12,7 +12,8 @@ describe('isPromise', () => {
     assert(isPromise(payload));
   });
 
-  it('should return false if something that is not a Promise is provided', () => {
+  it('should return false if something that is not a Promise is provided',
+    () => {
     const badPayload1 = { hello: 'world' };
     const badPayload2 = ['hello', 'world'];
     const badPayload3 = 'hello world';
