@@ -1,6 +1,12 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 
+interface IAlertProps extends React.Props<any> {
+  isVisible: boolean;
+  style?: Object;
+  status?: string;
+  className?: string;
+};
 
 const componentColor = {
   info: 'bg-blue white',
@@ -9,8 +15,13 @@ const componentColor = {
   error: 'bg-red white',
 };
 
-const Alert = ({ children = null, isVisible, status = 'info', className = '',
-                 style = {} }) => {
+const Alert = ({
+  children = null,
+  isVisible,
+  status = 'info',
+  className = '',
+  style = {}
+}: IAlertProps) => {
   const visibleClass = isVisible ? 'block' : 'hide';
 
   return (
@@ -26,6 +37,5 @@ const Alert = ({ children = null, isVisible, status = 'info', className = '',
 const styles = {
   base: {},
 };
-
 
 export default Alert;

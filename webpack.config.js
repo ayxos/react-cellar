@@ -88,10 +88,5 @@ module.exports = {
       { test: /\.woff2/, loader: 'url' },
       { test: /\.ttf/, loader: 'url' },
     ]
-  },
-
-  ts: {
-     // https://github.com/Microsoft/TypeScript/issues/5478
-    ignoreDiagnostics: [2605, 2345]
   }
 }
