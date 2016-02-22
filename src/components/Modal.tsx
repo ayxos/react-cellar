@@ -1,7 +1,16 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 
-const Modal = ({ isVisible = false, children = null, style = {} }) => {
+interface IModalProps extends React.Props<any> {
+  isVisible?: boolean;
+  style?: Object;
+};
+
+const Modal = ({
+  isVisible = false,
+  children = null,
+  style = {}
+}: IModalProps) => {
   const visibleStyle = isVisible ? styles.visible : styles.hidden;
 
   return (
@@ -29,6 +38,5 @@ const styles = {
     zIndex: 0,
   },
 };
-
 
 export default Modal;

@@ -1,16 +1,22 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 
-
-const ModalContent = ({ children = null, style = {}, className = '' }) => {
-  return (
-    <div
-      className={ `${ className } p1 z4 bg-white` }
-      style={ objectAssign({}, styles.base, style) }>
-      { children }
-    </div>
-  );
+interface IModalContentProps extends React.Props<any> {
+  style?: Object;
+  className?: string;
 };
+
+const ModalContent = ({
+  children = null,
+  style = {},
+  className = ''
+}: IModalContentProps) => (
+  <div
+    className={ `${ className } p1 z4 bg-white` }
+    style={ objectAssign({}, styles.base, style) }>
+    { children }
+  </div>
+);
 
 const styles = {
   base: {
@@ -18,6 +24,5 @@ const styles = {
     margin: '4rem auto',
   },
 };
-
 
 export default ModalContent;
