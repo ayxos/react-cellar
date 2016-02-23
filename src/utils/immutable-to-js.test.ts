@@ -1,4 +1,4 @@
-import immutableToJS from './immutableToJS';
+import immutableToJS from './immutable-to-js';
 import * as assert from 'assert';
 import { fromJS } from 'immutable';
 

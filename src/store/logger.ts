@@ -1,5 +1,5 @@
 const createLogger = require('redux-logger');
-import immutableToJS from '../utils/immutableToJS';
+import immutableToJS from '../utils/immutable-to-js';
 
 
 const logger = createLogger({

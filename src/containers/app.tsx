@@ -2,12 +2,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { loginUser, logoutUser } from '../actions/session';
 import { Link } from 'react-router';
-import Button from '../components/Button';
-import Content from '../components/Content';
-import LoginModal from '../components/LoginModal';
-import Logo from '../components/Logo';
-import Navigator from '../components/Navigator';
-import NavigatorItem from '../components/NavigatorItem';
+import Button from '../components/button';
+import Content from '../components/content';
+import LoginModal from '../components/login-modal';
+import Logo from '../components/logo';
+import Navigator from '../components/navigator';
+import NavigatorItem from '../components/navigator-item';
 
 interface IAppProps extends React.Props<any> {
   session: any;

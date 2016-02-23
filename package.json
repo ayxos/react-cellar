@@ -16,7 +16,7 @@
     "typings": "rimraf typings && typings install",
     "test": "npm run lint && ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts",
     "test:watch": "ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
-    "lint": "tslint 'src/**/*.tsx' 'test/**/*.tsx'"
+    "lint": "tslint 'src/**/*.tsx' 'src/**/*.ts' 'test/**/*.tsx' 'test/**/*.ts'"
   },
   "keywords": [
     "react",

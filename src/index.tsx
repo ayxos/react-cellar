@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './store/routes';
-import configureStore from './store/configureStore';
+import configureStore from './store/configure-store';
 import 'basscss/css/basscss.css'; // Global styles
 
 const store = configureStore({});

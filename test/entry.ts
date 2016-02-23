@@ -1,4 +1,4 @@
-const requireHacker = require('require-hacker');
+const rh = require('require-hacker');
 
 [ 'png',
   'jpg',
@@ -11,5 +11,5 @@ const requireHacker = require('require-hacker');
   'css',
   'svg',
 ].forEach((type) => {
-  requireHacker.hook(type, () => `module.exports = ""`);
+  rh.hook(type, () => `module.exports = ""`);
 });

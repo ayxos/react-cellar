@@ -1,4 +1,4 @@
-import isPromise from './isPromise';
+import isPromise from './is-promise';
 import * as assert from 'assert';
 
 describe('isPromise', () => {

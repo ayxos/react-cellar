@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { syncHistory } from 'react-router-redux';
 const persistState = require('redux-localstorage');
 const thunk = require('redux-thunk');
-import promiseMiddleware from '../middleware/promiseMiddleware';
+import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
 import rootReducer from '../reducers';
 

@@ -4,7 +4,7 @@ import * as jsdom from 'jsdom';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Modal from './Modal';
+import Modal from './modal';
 
 declare var global: {
   document: Document,

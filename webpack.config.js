@@ -68,7 +68,7 @@ module.exports = {
   devtool: 'source-map',
 
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.tsx', '.js']
+    extensions: ['', '.webpack.js', '.web.js', '.tsx', '.ts', '.js']
   },
 
   plugins: plugins,
