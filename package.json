@@ -7,12 +7,12 @@
     "node": "4.x"
   },
   "scripts": {
-    "postinstall": "npm run clean; npm run typings && npm run build",
-    "dev": "NODE_ENV=development node server.js",
-    "start": "NODE_ENV=production node server.js",
+    "postinstall": "npm run clean && npm run typings && npm run build",
+    "dev": "bash -c 'NODE_ENV=development node ./server.js'",
+    "start": "bash -c 'NODE_ENV=production node ./server.js'",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production webpack",
+    "build": "bash -c 'NODE_ENV=production webpack'",
     "typings": "rimraf typings && typings install",
     "test": "npm run lint && ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts",
     "test:watch": "ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "basscss": "^7.1.0",
-    "basscss-radium": "^3.0.0",
     "chalk": "^1.1.1",
     "css-loader": "^0.23.1",
     "express": "^4.13.3",
