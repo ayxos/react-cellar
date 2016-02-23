@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import Container from '../components/Container';
-import Column from '../components/Column';
+import Container from '../components/container';
+import Column from '../components/column';
 
 interface IAboutPageProps extends React.Props<any> {};
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import App from '../containers/App';
-import AboutPage from '../containers/AboutPage';
-import CounterPage from '../containers/CounterPage';
+import App from '../containers/app';
+import AboutPage from '../containers/about-page';
+import CounterPage from '../containers/counter-page';
 
 
 export default (

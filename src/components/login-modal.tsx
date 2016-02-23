@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Modal from './Modal';
-import ModalContent from './ModalContent';
-import LoginForm from './LoginForm';
+import Modal from './modal';
+import ModalContent from './modal-content';
+import LoginForm from './login-form';
 
 interface ILoginModalProps extends React.Props<any> {
   isVisible: boolean;

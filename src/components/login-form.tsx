@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReduxForm from 'redux-form';
-import Form from './Form';
-import FormGroup from './FormGroup';
-import FormLabel from './FormLabel';
-import FormError from './FormError';
-import Input from './Input';
-import Button from './Button';
-import Alert from './Alert';
+import Form from './form';
+import FormGroup from './form-group';
+import FormLabel from './form-label';
+import FormError from './form-error';
+import Input from './input';
+import Button from './button';
+import Alert from './alert';
 
 interface ILoginFormProps {
   onSubmit: () => void;

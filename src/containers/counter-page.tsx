@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { increment, decrement } from '../actions/counter';
-import Counter from '../components/Counter';
-import Container from '../components/Container';
-import Column from '../components/Column';
+import Counter from '../components/counter';
+import Container from '../components/container';
+import Column from '../components/column';
 
 
 interface ICounterPageProps extends React.Props<any> {
