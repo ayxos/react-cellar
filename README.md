@@ -24,12 +24,8 @@ Issues for this particular starter project are tagged with the 'ts-react' label.
 ### Planned work
 
 * Fix/ReOrg BassCSS styles
-* Better support for custom typings (so we don't have to commit typings to the repo)
 * Test examples (unit)
-* Component `displayName`, `propTypes`, `defaultProps` and documentation
-* Auto-reloading API server (when specified)
-* Enforce single-quotes for TS code and double-quotes for JSX.
-  - ref: https://github.com/palantir/tslint/issues/673
+* Component `displayName`, `defaultProps` and documentation
 
 ## If something doesn't work
 
