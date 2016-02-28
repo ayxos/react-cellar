@@ -48,12 +48,17 @@ module.exports = {
   entry: {
     app: appEntries,
     vendor: [
+      'es5-shim',
+      'es6-shim',
+      'es6-promise',
       'react',
       'react-dom',
       'react-redux',
       'redux',
       'redux-thunk',
-      'redux-logger'
+      'redux-logger',
+      'react-router',
+      'react-router-redux',
     ]
   },
 
