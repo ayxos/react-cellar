@@ -1,8 +1,7 @@
-'use strict';
-
 const path = require("path");
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const proxy = require('./server/webpack-dev-proxy');
 
 const baseAppEntries = [
   './src/index.tsx',
@@ -28,7 +27,7 @@ const basePlugins = [
 ];
 
 const devPlugins = [
-  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin(),
 ];
 
 const prodPlugins = [
@@ -77,6 +76,11 @@ module.exports = {
   },
 
   plugins: plugins,
+
+  devServer: {
+    historyApiFallback: { index: '/' },
+    proxy: proxy(),
+  },
 
   module: {
     preLoaders: [{
