@@ -16,7 +16,7 @@ const Input = ({
   fieldDefinition,
 }: IInputProps) => (
   <input
-    className="block col-12 mb1 field"
+    className="block col-12 mb1 input"
     style={ objectAssign({}, styles.base, style) }
     type={ type }
     placeholder={ placeholder }

@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './store/routes';
 import configureStore from './store/configure-store';
-import 'basscss/css/basscss.css'; // Global styles
+
+// Global styles
+import './styles/index.css';
 
 const store = configureStore({});
-
 
 ReactDOM.render(
   <div>

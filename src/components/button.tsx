@@ -17,7 +17,7 @@ const Button = ({
 }: IButtonProps) => (
   <button
     type={ type }
-    className={ `btn btn-primary  ${ className }` }
+    className={ `btn btn-primary ${ className }` }
     style={ objectAssign({}, styles.base, style) }
     onClick={ onClick }>
     { children }
