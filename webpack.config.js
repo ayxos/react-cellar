@@ -90,7 +90,7 @@ module.exports = {
     loaders: [
       { test: /\.ts[x]?$/, loader: 'ts-loader', exclude: /node_modules/ },
       { test: /\.html$/, loader: 'raw' },
-      { test: /\.css$/, loader: 'style-loader!css-loader?sourceMap' },
+      { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader!cssnext-loader' },
       { test: /\.svg/, loader: 'url' },
       { test: /\.eot/, loader: 'url' },
       { test: /\.woff/, loader: 'url' },
