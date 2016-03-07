@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 import { browserHistory } from 'react-router';
 import { syncHistory } from 'react-router-redux';
 const persistState = require('redux-localstorage');
-const thunk = require('redux-thunk');
+const thunk = require('redux-thunk').default;
 import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
 import rootReducer from '../reducers';
