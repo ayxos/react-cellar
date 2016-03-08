@@ -69,7 +69,6 @@
     "jsdom": "^8.0.2",
     "mocha": "^2.4.5",
     "object-assign": "^4.0.1",
-    "postcss-basscss": "^0.2.3",
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.1",
