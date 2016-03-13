@@ -20,20 +20,6 @@ interface ILoginFormProps {
   };
 };
 
-const validate = values => {
-  const errors = { username: '', password: '' };
-
-  if (!values.username) {
-    errors.username = 'Username is required.';
-  }
-
-  if (!values.password) {
-    errors.password = 'Password is required.';
-  }
-
-  return errors;
-};
-
 // Making this a class-based component until redux-form typings support 
 // stateless functional components.
 class LoginForm extends React.Component<ILoginFormProps, void> {
