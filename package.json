@@ -7,16 +7,17 @@
     "node": "4.x"
   },
   "scripts": {
-    "postinstall": "npm run clean && npm run typings && npm run build",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
-    "start": "cross-env NODE_ENV=production node server/node-server.js",
-    "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "typings": "rimraf typings && typings install",
-    "test": "npm run lint && ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts",
-    "test:watch": "ts-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
-    "lint": "tslint 'src/**/*.tsx' 'src/**/*.ts' 'test/**/*.tsx' 'test/**/*.ts'"
+    "clean": "rimraf dist/",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
+    "lint": "tslint 'src/**/*.tsx' 'src/**/*.ts' 'test/**/*.tsx' 'test/**/*.ts'",
+    "postinstall": "npm run typings && npm run build",
+    "start": "cross-env NODE_ENV=production node server/node-server.js",
+    "pretest": "npm run lint",
+    "test": "ts-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts",
+    "test:watch": "ts-node ./node_modules/.bin/_mocha --opts ./test-utils/mocha.opts -w",
+    "typings": "rimraf typings/ && typings install"
   },
   "keywords": [
     "react",

@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import fireAction from '../utils/fire-action';
+import fireAction from '../../test-utils/fire-action';
 import sessionReducer from '../reducers/session';
 
 import {

@@ -1,7 +1,10 @@
-const path = require("path");
+'use strict';
+
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const proxy = require('./server/webpack-dev-proxy');
+const loaders = require('./webpack/loaders');
 
 const baseAppEntries = [
   './src/index.tsx',
@@ -64,7 +67,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js',
-    publicPath: "/",
+    publicPath: '/',
     sourceMapFilename: '[name].[hash].js.map',
     chunkFilename: '[id].chunk.js'
   },
@@ -83,19 +86,18 @@ module.exports = {
   },
 
   module: {
-    preLoaders: [{
-      test: /\.ts[x]?$/,
-      loader: 'tslint'
-    }],
+    preLoaders: [
+      loaders.tslint,
+    ],
     loaders: [
-      { test: /\.ts[x]?$/, loader: 'ts-loader', exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'raw' },
-      { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' },
-      { test: /\.svg/, loader: 'url' },
-      { test: /\.eot/, loader: 'url' },
-      { test: /\.woff/, loader: 'url' },
-      { test: /\.woff2/, loader: 'url' },
-      { test: /\.ttf/, loader: 'url' },
+      loaders.tsx,
+      loaders.html,
+      loaders.css,
+      loaders.svg,
+      loaders.eot,
+      loaders.woff,
+      loaders.woff2,
+      loaders.ttf,
     ]
   },
 
@@ -109,4 +111,4 @@ module.exports = {
       })
     ];
   }
-}
+};
