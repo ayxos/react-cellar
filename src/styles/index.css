@@ -13,6 +13,7 @@
 @import 'basscss-addons/modules/progress';
 @import 'basscss-addons/modules/lighten';
 @import 'basscss-addons/modules/background-images';
+@import 'basscss-addons/modules/darken';
 
 @import 'basscss-type-scale';
 @import 'basscss-typography';
