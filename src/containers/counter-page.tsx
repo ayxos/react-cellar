@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { increment, decrement } from '../actions/counter';
 import Counter from '../components/counter';
 import Container from '../components/container';
-import Column from '../components/column';
-
 
 interface ICounterPageProps extends React.Props<any> {
   counter: number;
@@ -29,18 +27,14 @@ class CounterPage extends React.Component<ICounterPageProps, void> {
   render() {
     const { counter, increaseCounter, decreaseCounter } = this.props;
  
-    return (
-      <Container>
-        <Column className="col-4">
-          <h1 className="center">Counter</h1>
+    return <Container size={2} center>
+      <h2 className="center caps" id="qa-counter-heading">Counter</h2>
 
-          <Counter
-            counter={ counter }
-            increment={ increaseCounter }
-            decrement={ decreaseCounter } />
-        </Column>
-      </Container>
-    ); 
+      <Counter
+        counter={ counter }
+        increment={ increaseCounter }
+        decrement={ decreaseCounter } />
+    </Container>;
   };
 }
 

@@ -1,28 +1,27 @@
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 interface INavigatorProps extends React.Props<any> {
   isVisible?: boolean;
-  className?: string;
+  mr?: boolean;
+  ml?: boolean;
 };
 
 const NavigatorItem = ({
   children = null,
   isVisible = true,
-  className = ''
+  mr = false,
+  ml = false,
 }: INavigatorProps) => {
-  const visibleClass = isVisible ? 'block' : 'hide';
+  const navItemClasses = classNames('truncate', {
+    hide: !isVisible,
+    mr2: mr,
+    ml2: ml,
+  });
 
-  return (
-    <div
-      className={ `${ visibleClass } ${ className }` }
-      style={ styles.base }>
-      { children }
-    </div>
-  );
-};
-
-const styles = {
-  base: {},
+  return <div className={ navItemClasses }>
+    { children }
+  </div>;
 };
 
 export default NavigatorItem;

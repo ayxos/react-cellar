@@ -1,31 +1,29 @@
 import * as React from 'react';
-const objectAssign = require('object-assign');
+import * as classNames from 'classnames';
 
 interface IButtonProps extends React.Props<any> {
   onClick?: () => void;
   type?: string;
-  style?: Object;
   className?: string;
+  id?: string;
 };
 
-const Button = ({
-  children = null,
-  className = '',
-  style = {},
-  type = 'button',
+function Button({
   onClick = null,
-}: IButtonProps) => (
-  <button
+  type = 'button',
+  className = '',
+  id = '',
+  children = null
+}: IButtonProps) {
+  const buttonClasses = classNames('btn', 'btn-primary', className);
+
+  return <button
+    id={ id }
     type={ type }
-    className={ `btn btn-primary ${ className }` }
-    style={ objectAssign({}, styles.base, style) }
+    className={ buttonClasses }
     onClick={ onClick }>
     { children }
-  </button>
-);
-
-const styles = {
-  base: {},
-};
+  </button>;
+}
 
 export default Button;

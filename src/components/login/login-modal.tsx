@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Modal from './modal';
-import ModalContent from './modal-content';
+import { Modal, ModalContent } from '../modal';
 import LoginForm from './login-form';
 
 interface ILoginModalProps extends React.Props<any> {
@@ -10,26 +9,17 @@ interface ILoginModalProps extends React.Props<any> {
   onSubmit: () => void;
 };
 
-const LoginModal = ({
-  isVisible,
-  isPending,
-  hasError,
-  onSubmit
-}: ILoginModalProps) => (
-  <Modal isVisible={ isVisible }>
-    <ModalContent style={ styles.base }>
-      <h1 className="mr2 ml2">Login</h1>
+function LoginModal({ isVisible, isPending, hasError, onSubmit }) {
+  return <Modal isVisible={ isVisible }>
+    <ModalContent>
+      <h1 className="mt0">Login</h1>
 
       <LoginForm
         isPending={ isPending }
         hasError={ hasError }
         onSubmit={ onSubmit } />
     </ModalContent>
-  </Modal>
-);
-
-const styles = {
-  base: {},
-};
+  </Modal>;
+}
 
 export default LoginModal;

@@ -1,25 +1,14 @@
 import * as React from 'react';
-const objectAssign = require('object-assign');
 
 interface IContentProps extends React.Props<any> {
   isVisible: boolean;
   style?: Object;
 };
 
-const Content = ({
-  children = null,
-  style = {},
-  isVisible
-}: IContentProps) => (
-  <div
-    className={ `mt3 p1` }
-    style={ objectAssign({}, styles.base, style) }>
+function Content({ children = null, isVisible }) {
+  return <main>
     { isVisible ? children : null }
-  </div>
-);
-
-const styles = {
-  base: {},
-};
+  </main>;
+}
 
 export default Content;
