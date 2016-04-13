@@ -14,7 +14,7 @@ const statusClasses = {
   error: 'bg-red white',
 };
 
-function Alert({
+export default function Alert({
   children = null,
   isVisible,
   status = 'info',
@@ -34,5 +34,3 @@ function Alert({
     </div>
   );
 };
-
-export default Alert;

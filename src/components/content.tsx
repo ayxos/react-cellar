@@ -5,10 +5,10 @@ interface IContentProps extends React.Props<any> {
   style?: Object;
 };
 
-function Content({ children = null, isVisible }) {
-  return <main>
-    { isVisible ? children : null }
-  </main>;
+export default function Content({ children = null, isVisible }: IContentProps) {
+  return (
+    <main>
+      { isVisible ? children : null }
+    </main>
+  );
 }
-
-export default Content;

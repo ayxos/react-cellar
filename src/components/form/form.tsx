@@ -4,17 +4,17 @@ interface IFormProps extends React.Props<any> {
   handleSubmit: () => void;
 };
 
-function Form({
+export default function Form({
   children = null,
   handleSubmit
 }: IFormProps) {
-  return <form
-    onSubmit={(e) => {
-      e.preventDefault();
-      handleSubmit();
-    }}>
-    { children }
-  </form>;
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}>
+      { children }
+    </form>
+  );
 }
-
-export default Form;

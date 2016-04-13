@@ -8,7 +8,7 @@ interface IButtonProps extends React.Props<any> {
   id?: string;
 };
 
-function Button({
+export default function Button({
   onClick = null,
   type = 'button',
   className = '',
@@ -17,13 +17,13 @@ function Button({
 }: IButtonProps) {
   const buttonClasses = classNames('btn', 'btn-primary', className);
 
-  return <button
-    id={ id }
-    type={ type }
-    className={ buttonClasses }
-    onClick={ onClick }>
-    { children }
-  </button>;
+  return (
+    <button
+      id={ id }
+      type={ type }
+      className={ buttonClasses }
+      onClick={ onClick }>
+      { children }
+    </button>
+  );
 }
-
-export default Button;
