@@ -6,16 +6,16 @@ interface IFormErrorProps extends React.Props<any> {
   id?: string;
 };
 
-function FormError({
+export default function FormError({
   children = null,
   isVisible,
   id = ''
 }: IFormErrorProps) {
   const formErrorClasses = classNames('bold', 'black', { 'hide': !isVisible });
 
-  return <div className={ formErrorClasses } id={ id }>
-    { children }
-  </div>;
+  return (
+    <div className={ formErrorClasses } id={ id }>
+      { children }
+    </div>
+  );
 }
-
-export default FormError;

@@ -8,18 +8,18 @@ interface IInputProps extends React.Props<any> {
   id?: string;
 };
 
-const Input = ({
+export default function Input({
   type = 'text',
   placeholder = '',
   fieldDefinition,
   id = ''
-}) => (
-  <input
-    id={ id }
-    className="block col-12 mb1 input"
-    type={ type }
-    placeholder={ placeholder }
-    { ...fieldDefinition } />
-);
-
-export default Input;
+}) {
+  return (
+    <input
+      id={ id }
+      className="block col-12 mb1 input"
+      type={ type }
+      placeholder={ placeholder }
+      { ...fieldDefinition } />
+  );
+}

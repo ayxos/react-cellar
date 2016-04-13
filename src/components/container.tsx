@@ -6,7 +6,7 @@ interface IContainerProps extends React.Props<any> {
   center: boolean;
 };
 
-function Container({
+export default function Container({
   size = 1,
   center = false,
   children = null
@@ -19,9 +19,9 @@ function Container({
     'mx-auto': center,
   });
 
-  return <div className={ containerClasses }>
-    { children }
-  </div>;
+  return (
+    <div className={ containerClasses }>
+      { children }
+    </div>
+  );
 }
-
-export default Container;

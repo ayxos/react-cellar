@@ -7,22 +7,26 @@ interface ICounterProps extends React.Props<any> {
   decrement: () => void;
 };
 
-function Counter({ counter, increment, decrement }) {
-  return <div className="flex">
-    <Button className="bg-black col-2"
-      onClick={ decrement }>
-      -
-    </Button>
+export default function Counter({
+  counter,
+  increment,
+  decrement
+}: ICounterProps) {
+  return (
+    <div className="flex">
+      <Button className="bg-black col-2"
+        onClick={ decrement }>
+        -
+      </Button>
 
-    <div className="flex-auto center h1">
-      { counter }
+      <div className="flex-auto center h1">
+        { counter }
+      </div>
+
+      <Button className="col-2"
+        onClick={ increment }>
+        +
+      </Button>
     </div>
-
-    <Button className="col-2"
-      onClick={ increment }>
-      +
-    </Button>
-  </div>;
+  );
 }
-
-export default Counter;
