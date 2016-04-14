@@ -13,7 +13,8 @@ dependencies:
 
 test:
   post:
-    - npm run dev:
+    - npm run build
+    - npm start:
         background: true
     - pybot -d "./e2e/robot/test_results" ./e2e/robot/tests
 
