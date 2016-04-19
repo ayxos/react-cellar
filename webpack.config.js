@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const proxy = require('./server/webpack-dev-proxy');
 const loaders = require('./webpack/loaders');
+const styleLintPlugin = require('stylelint-webpack-plugin');
 
 const baseAppEntries = [
   './src/index.tsx',
@@ -31,6 +32,11 @@ const basePlugins = [
 
 const devPlugins = [
   new webpack.NoErrorsPlugin(),
+  new styleLintPlugin({
+    configFile: './.stylelintrc',
+    files: ['src/**/*.css'],
+    failOnError: false,
+  }),
 ];
 
 const prodPlugins = [
