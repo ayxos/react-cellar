@@ -1,5 +1,5 @@
 import * as React from 'react';
-const LogoImage = require('../assets/rangleio-logo.svg');
+const LogoImage = require('../../assets/rangleio-logo.svg');
 
 const styles = { width: 128 };
 
