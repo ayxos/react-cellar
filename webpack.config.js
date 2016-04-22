@@ -51,6 +51,28 @@ const plugins = basePlugins
   .concat(process.env.NODE_ENV === 'production' ? prodPlugins : [])
   .concat(process.env.NODE_ENV === 'development' ? devPlugins : []);
 
+const postcssBasePlugins = [
+  require('postcss-modules-local-by-default'),
+  require('postcss-import')({
+    addDependencyTo: webpack,
+  }),
+  require('postcss-cssnext')({
+    browsers: ['ie >= 8', 'last 2 versions'],
+  }),
+];
+const postcssDevPlugins = [];
+const postcssProdPlugins = [
+  require('cssnano')({
+    safe: true,
+    sourcemap: true,
+    autoprefixer:false,
+  }),
+];
+
+const postcssPlugins = postcssBasePlugins
+  .concat(process.env.NODE_ENV === 'production' ? postcssProdPlugins : [])
+  .concat(process.env.NODE_ENV === 'development' ? postcssDevPlugins : []);
+
 module.exports = {
 
   entry: {
@@ -108,14 +130,6 @@ module.exports = {
   },
 
   postcss: function() {
-    return [
-      require('postcss-modules-local-by-default'),
-      require('postcss-import')({
-        addDependencyTo: webpack
-      }),
-      require('postcss-cssnext')({
-        browsers: ['ie >= 8', 'last 2 versions']
-      })
-    ];
-  }
+    return postcssPlugins;
+  },
 };
