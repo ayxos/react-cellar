@@ -1,7 +1,7 @@
 import * as React from 'react';
 const objectAssign = require('object-assign');
 import * as classNames from 'classnames';
-const Styles =  require('./modal.css');
+const Styles =  require('../modal.css');
 
 interface IModalContentProps extends React.Props<any> {};
 

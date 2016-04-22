@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReduxForm from 'redux-form';
-import Form from '../form/form';
+import Form from '../form/';
 import FormGroup from '../form/form-group';
 import FormLabel from '../form/form-label';
 import FormError from '../form/form-error';
-import Input from '../form/input';
+import Input from '../form/form-input';
 import Button from '../button';
 import Alert from '../alert';
 
