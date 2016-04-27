@@ -80,11 +80,6 @@ module.exports = {
 
   entry: {
     app: appEntries,
-    shims: [
-      'es5-shim',
-      'es6-shim',
-      'es6-promise',
-    ]
   },
 
   output: {
