@@ -1,8 +1,7 @@
 import * as React from 'react';
-import * as ReduxForm from 'redux-form';
 
 interface IInputProps extends React.Props<any> {
-  fieldDefinition: ReduxForm.FieldProp;
+  fieldDefinition: any;
   type?: string;
   placeholder?: string;
   id?: string;

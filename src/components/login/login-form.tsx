@@ -1,5 +1,6 @@
 import * as React from 'react';
-import * as ReduxForm from 'redux-form';
+const ReduxForm = require('redux-form');
+
 import Form from '../form/';
 import FormGroup from '../form/form-group';
 import FormLabel from '../form/form-label';
@@ -15,8 +16,8 @@ interface ILoginFormProps {
   isPending: boolean;
   hasError: boolean;
   fields?: {
-    username: ReduxForm.FieldProp;
-    password: ReduxForm.FieldProp;
+    username: any;
+    password: any;
   };
 };
 

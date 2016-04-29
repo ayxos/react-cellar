@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { IndexRoute, Route } from 'react-router';
+const { IndexRoute, Route } = require('react-router');
+
 import App from '../containers/app';
 import AboutPage from '../containers/about-page';
 import CounterPage from '../containers/counter-page';

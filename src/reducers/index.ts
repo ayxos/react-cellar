@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import { reducer as formReducer } from 'redux-form';
+const { routerReducer } = require('react-router-redux');
+const formReducer = require('redux-form').reducer;
 import counter from './counter';
 import session from './session';
-
 
 const rootReducer = combineReducers({
   session,
@@ -11,6 +10,5 @@ const rootReducer = combineReducers({
   routing: routerReducer,
   form: formReducer,
 });
-
 
 export default rootReducer;

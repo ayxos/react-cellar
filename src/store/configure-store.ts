@@ -2,11 +2,12 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
-import thunk from 'redux-thunk';
+const thunk = require('redux-thunk').default;
+const persistState = require('redux-localstorage');
+
 import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
 import rootReducer from '../reducers';
-const persistState = require('redux-localstorage');
 
 function configureStore(initialState) {
   const store = compose(
