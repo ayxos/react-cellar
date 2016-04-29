@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+const connect = require('react-redux').connect;
+
 import { increment, decrement } from '../actions/counter';
 import Counter from '../components/counter';
 import Container from '../components/container';
