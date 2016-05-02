@@ -5,7 +5,7 @@ declare let __DEV__: boolean;
 
 // A hack for the Redux DevTools Chrome extension.
 interface Window {
-  devToolsExtension?: () => void;
+  devToolsExtension?: () => Function;
 }
 
 // webpack-hot-loader sets some extra attributes on node's `module`if that
