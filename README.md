@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/rangle/typescript-react-redux-starter.svg?style=svg)](https://circleci.com/gh/rangle/typescript-react-redux-starter)
+
 # TypeScript/React/Redux Starter
 
 This is the initial version of our starter project using React, TypeScript and Webpack to tie it all together.
