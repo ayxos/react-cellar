@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-const expressSession = require('express-session');
 const winston = require('winston');
 const helmet = require('helmet');
 const nodeProxy = require('./node-proxy');
@@ -35,8 +34,6 @@ app.use(helmet());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.use(expressSession( { secret: 'party parrot' }));
 
 app.use(passport.initialize());
 app.use(passport.session());
