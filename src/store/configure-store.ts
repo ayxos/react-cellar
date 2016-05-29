@@ -4,6 +4,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 const thunk = require('redux-thunk').default;
 const persistState = require('redux-localstorage');
+const { browserHistory } = require('react-router');
+const { routerMiddleware } = require('react-router-redux');
 
 import promiseMiddleware from '../middleware/promise-middleware';
 import logger from './logger';
@@ -21,6 +23,7 @@ function configureStore(initialState) {
 
 function _getMiddleware() {
   let middleware = [
+    routerMiddleware(browserHistory),
     promiseMiddleware,
     thunk,
   ];
