@@ -12,6 +12,14 @@ exports.tsx = {
   exclude: /node_modules/,
 };
 
+exports.istanbulInstrumenter = {
+  test: /^(.(?!\.test))*\.tsx?$/,
+  loader: 'istanbul-instrumenter-loader',
+  query: {
+    embedSource: true,
+  },
+};
+
 exports.html = {
   test: /\.html$/,
   loader: 'raw',
@@ -22,6 +30,11 @@ exports.css = {
   test: /\.css$/,
   loader: 'style-loader!css?-minimize!postcss',
   exclude: /node_modules/,
+};
+
+exports.json = {
+  test: /\.json$/,
+  loader: 'json',
 };
 
 exports.svg = makeUrlLoader(/\.svg$/);
