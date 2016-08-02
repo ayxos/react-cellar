@@ -3,7 +3,7 @@ machine:
     version: 2.7.9
 
   node:
-    version: 4
+    version: 6
 
 dependencies:
   pre:
@@ -30,8 +30,8 @@ test:
     #    background: true
     #- sleep 5
     #- ./e2d/robot/exec/run_all_on_browserstack_desktop_ie.bash
-    #- ./e2e/robot/exec/run_smoke_on_local_chrome.bash
-    - ./e2e/robot/exec/run_all_on_local_chrome.bash
+    - ./e2e/robot/exec/run_smoke_on_local_chrome.bash
+    #- ./e2e/robot/exec/run_all_on_local_chrome.bash
 
 general:
   artifacts:
