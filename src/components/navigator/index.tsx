@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Navbar } from 'react-bootstrap';
 
 interface INavigatorProps extends React.Props<any> {
   testid?: string;
@@ -9,10 +10,10 @@ export default function Navigator({
   testid = ''
 }: INavigatorProps) {
   return (
-    <nav
+    <Navbar
       data-testid={ testid }
       className="flex items-center p1 bg-white border-bottom navbar-inner">
       { children }
-    </nav>
+    </Navbar>
   );
 }

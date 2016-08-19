@@ -10,6 +10,9 @@ import Logo from '../components/logo';
 import Navigator from '../components/navigator';
 import NavigatorItem from '../components/navigator-item';
 
+import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+
+
 interface IAppProps extends React.Props<any> {
   session: any;
   login: () => void;
@@ -45,33 +48,47 @@ class App extends React.Component<IAppProps, void> {
           isPending={ session.get('isLoading', false) }
           hasError={ session.get('hasError', false) }
           isVisible={ !isLoggedIn } />
-        <Navigator testid="navigator">
-          <NavigatorItem mr>
-            <Logo />
-          </NavigatorItem>
-          <NavigatorItem isVisible={ isLoggedIn } mr>
-            <Link to="/">Counter</Link>
-          </NavigatorItem>
-          <NavigatorItem isVisible={ isLoggedIn } mr>
-            <Link to="/about">About Us</Link>
-          </NavigatorItem>
-          <NavigatorItem isVisible={ isLoggedIn }>
-            <Link to="/create">Create</Link>
-          </NavigatorItem>
-          <div className="flex flex-auto"></div>
-          <NavigatorItem isVisible={ isLoggedIn } mr>
-            <div
-              data-testid="user-profile"
-              className="h3">
-              { `${ firstName } ${ lastName }` }
-            </div>
-          </NavigatorItem>
-          <NavigatorItem isVisible={ isLoggedIn }>
-            <Button onClick={ logout } className="bg-red white">
-              Logout
-            </Button>
-          </NavigatorItem>
-        </Navigator>
+
+
+        <Navbar>
+          <Logo/>
+          <Navbar.Collapse>
+            <Nav>
+              <NavigatorItem isVisible={ isLoggedIn } mr>
+               <Link to="/">Counter</Link>
+             </NavigatorItem>
+             <NavigatorItem isVisible={ isLoggedIn } mr>
+               <Link to="/about">About</Link>
+             </NavigatorItem>
+             <NavigatorItem isVisible={ isLoggedIn } mr>
+               <Link to="/list">List</Link>
+             </NavigatorItem>
+              <NavigatorItem isVisible={ isLoggedIn } mr>
+               <Link to="/create">Create</Link>
+             </NavigatorItem>
+              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                <MenuItem eventKey={3.1}>Action</MenuItem>
+                <MenuItem eventKey={3.2}>Another action</MenuItem>
+                <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey={3.3}>Separated link</MenuItem>
+              </NavDropdown>
+            </Nav>
+            <Nav pullRight>
+              <NavigatorItem isVisible={ isLoggedIn } mr>
+                <div data-testid="user-profile">
+                  { `${ firstName } ${ lastName }` }
+                </div>
+              </NavigatorItem>
+            <NavigatorItem isVisible={ isLoggedIn }>
+              <Button onClick={ logout } className="bg-red white">
+                Logout
+              </Button>
+            </NavigatorItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
         <Content isVisible={ isLoggedIn }>
           { children }
         </Content>

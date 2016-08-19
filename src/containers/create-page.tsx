@@ -1,12 +1,14 @@
 import * as React from 'react';
 import Container from '../components/container';
-import { wine } from '../api/wine';
+import { newWine } from '../api/wine';
 
-interface ICreatePageProps extends React.Props<any> {};
+export interface ICreatePageProps extends React.Props<any> {}
+
+export interface ICreatePageState {}
 
 export default function CreatePage(props: ICreatePageProps) {
-  let newWine = () => {
-    wine({
+  let createNewWine = () => {
+    newWine({
       title: 'test',
       region: 'test',
       year: 1,
@@ -14,11 +16,13 @@ export default function CreatePage(props: ICreatePageProps) {
     });
   };
   return (
+    <div>
       <Container size={4} center>
         <h2 className="caps">Create</h2>
         <button
-          onClick={newWine}
+          onClick={createNewWine}
         />
       </Container>
+    </div>
   );
 }
