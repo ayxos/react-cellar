@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import Container from '../components/container';
 import { wines } from '../api/wine';
 
@@ -12,15 +11,14 @@ export interface ICreatePageState {
 }
 
 export default class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
-  serverRequest= null;
 
   componentWillMount() {};
 
   componentDidMount() {
     console.log('hola');
-    wines().then((result) => {
-      console.log(wines);
-      this.setState({wines: result});
+    wines().then((winePromise) => {
+      console.log('esta mierda?', winePromise);
+      this.setState({wines: winePromise});
     });
   };
 
@@ -28,19 +26,28 @@ export default class ListPage extends React.Component<ICreatePageProps, ICreateP
     console.log('adios');
   };
 
+  renderItems() {
+    console.log('reloading');
+    let wines = (this.state && this.state.wines) ? this.state.wines : null;
+    if (!wines) {
+      return <a href={'hola'}>{'nada'}</a>;
+    }
+    let lines = wines.map((wine) => {
+      return <p key={wine._id}>{wine.title}{' '}{wine.year}</p>;
+    });
+    return lines;
+  }
+
   render() {
     let result = (this.state && this.state.wines) ? this.state.wines : null;
+    console.log('rerender', result);
     return (
       <div>
         <Container size={4} center>
           <h2 className="caps">Create</h2>
-          <a href={'hola'}>{result}</a>
+          {this.renderItems()}
         </Container>
       </div>
     );
   };
 };
-
-// export default function CreatePage() {
-//   return ReactDOM.render(<ListPage/>);
-// };

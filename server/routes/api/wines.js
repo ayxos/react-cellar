@@ -1,5 +1,6 @@
 module.exports = function(app, db) {
     app.get('/api/wines', function(req, res) {
+        console.log('Wine get started');
         db.Wine.find(function (err, wines) {
             if (err) throw err;
             else {

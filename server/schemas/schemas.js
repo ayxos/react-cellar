@@ -8,7 +8,8 @@ var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 
                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } }; 
 
 // mongoose.connect('mongodb://' + config.SERVER_CONFIG.mongodb.credentials + config.SERVER_CONFIG.mongodb.host + config.SERVER_CONFIG.mongodb.port + '/' + config.SERVER_CONFIG.mongodb.dbName, function(err) {
-var mongoConnectTo = 'mongodb://user@pass/ds021895.mlab.com:2xxx/project';
+var mongoConnectTo = process.env.MONGODDBBLINK || 'mongodb://user:pass@ds02xxxx3.mlab.com:2xxx5/yourapp';
+
 mongoose.connect(mongoConnectTo, options, function(err) {
     if (err) throw err;
 });

@@ -15,15 +15,10 @@ export function post(path, data) {
 }
 
 export function get(path) {
-  return fetch(BASE_URL + path, {
-    method: 'get',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-  })
-  .then((response) => {
-    console.log('RES', response);
+  return fetch(BASE_URL + path)
+  .then(function(response) {
+    console.log('response', response)
+    console.log('header', response.headers.get('Content-Type'))
     return response.json();
   });
 }

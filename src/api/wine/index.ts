@@ -15,7 +15,10 @@ export function newWine(wine) {
 export function wines() {
   return new Promise((resolve, reject) => {
     return get('/wines')
-    .then(json => resolve(json.meta))
+    .then(json => {
+      console.log('guat>?', json);
+      resolve(json)
+    })
     .then(null, (err) => reject(new Error(WINE_ERR_MSG)));
   });
 }
