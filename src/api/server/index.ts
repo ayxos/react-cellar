@@ -16,11 +16,7 @@ export function post(path, data) {
 
 export function get(path) {
   return fetch(BASE_URL + path)
-  .then(function(response) {
-    console.log('response', response)
-    console.log('header', response.headers.get('Content-Type'))
-    return response.json();
-  });
+  .then((response) => response.json());
 }
 
 

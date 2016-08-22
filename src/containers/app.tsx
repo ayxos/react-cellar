@@ -33,6 +33,47 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+function renderNavbar(firstName, lastName, isLoggedIn, logout) {
+  return (<Navbar>
+    <Logo/>
+    <Navbar.Collapse>
+      <Nav>
+        <NavigatorItem isVisible={ isLoggedIn } mr>
+         <Link to="/">Counter</Link>
+       </NavigatorItem>
+       <NavigatorItem isVisible={ isLoggedIn } mr>
+         <Link to="/about">About</Link>
+       </NavigatorItem>
+       <NavigatorItem isVisible={ isLoggedIn } mr>
+         <Link to="/list">List</Link>
+       </NavigatorItem>
+        <NavigatorItem isVisible={ isLoggedIn } mr>
+         <Link to="/create">Create</Link>
+       </NavigatorItem>
+        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+          <MenuItem eventKey={3.1}>Action</MenuItem>
+          <MenuItem eventKey={3.2}>Another action</MenuItem>
+          <MenuItem eventKey={3.3}>Something else here</MenuItem>
+          <MenuItem divider />
+          <MenuItem eventKey={3.3}>Separated link</MenuItem>
+        </NavDropdown>
+      </Nav>
+      <Nav pullRight>
+        <NavigatorItem isVisible={ isLoggedIn } mr>
+          <div data-testid="user-profile">
+            { `${ firstName } ${ lastName }` }
+          </div>
+        </NavigatorItem>
+      <NavigatorItem isVisible={ isLoggedIn }>
+        <Button onClick={ logout } className="bg-red white">
+          Logout
+        </Button>
+      </NavigatorItem>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>);
+}
+
 class App extends React.Component<IAppProps, void> {
   render() {
     const { children, session, login, logout } = this.props;
@@ -49,45 +90,7 @@ class App extends React.Component<IAppProps, void> {
           hasError={ session.get('hasError', false) }
           isVisible={ !isLoggedIn } />
 
-
-        <Navbar>
-          <Logo/>
-          <Navbar.Collapse>
-            <Nav>
-              <NavigatorItem isVisible={ isLoggedIn } mr>
-               <Link to="/">Counter</Link>
-             </NavigatorItem>
-             <NavigatorItem isVisible={ isLoggedIn } mr>
-               <Link to="/about">About</Link>
-             </NavigatorItem>
-             <NavigatorItem isVisible={ isLoggedIn } mr>
-               <Link to="/list">List</Link>
-             </NavigatorItem>
-              <NavigatorItem isVisible={ isLoggedIn } mr>
-               <Link to="/create">Create</Link>
-             </NavigatorItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
-              </NavDropdown>
-            </Nav>
-            <Nav pullRight>
-              <NavigatorItem isVisible={ isLoggedIn } mr>
-                <div data-testid="user-profile">
-                  { `${ firstName } ${ lastName }` }
-                </div>
-              </NavigatorItem>
-            <NavigatorItem isVisible={ isLoggedIn }>
-              <Button onClick={ logout } className="bg-red white">
-                Logout
-              </Button>
-            </NavigatorItem>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        {renderNavbar(firstName, lastName, isLoggedIn, logout)}
 
         <Content isVisible={ isLoggedIn }>
           { children }

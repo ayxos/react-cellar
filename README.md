@@ -81,3 +81,6 @@ Copyright (c) 2016 rangle.io
 [MIT License][MIT]
 
 [MIT]: ./LICENSE "Mit License"
+
+
+Based on "typescript-react-redux-starter"
