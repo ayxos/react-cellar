@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 interface INavigatorItemProps extends React.Props<any> {
   isVisible?: boolean;
   mr?: boolean;
   ml?: boolean;
+  linkTo?: string;
 };
 
 export default function NavigatorItem({
@@ -13,6 +14,7 @@ export default function NavigatorItem({
   isVisible = true,
   mr = false,
   ml = false,
+  linkTo = '/'
 }: INavigatorItemProps) {
   const navItemClasses = classNames('truncate', {
     hide: !isVisible,
@@ -21,8 +23,8 @@ export default function NavigatorItem({
   });
 
   return (
-    <div className={ navItemClasses }>
+    <LinkContainer className={ navItemClasses } to={ linkTo }>
       { children }
-    </div>
+    </LinkContainer>
   );
 };

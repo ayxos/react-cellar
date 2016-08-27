@@ -1,14 +1,14 @@
 import * as React from 'react';
 const connect = require('react-redux').connect;
-const Link = require('react-router').Link;
 
 import { loginUser, logoutUser } from '../actions/session';
 import Button from '../components/button';
 import Content from '../components/content';
 import LoginModal from '../components/login/login-modal';
 import Logo from '../components/logo';
-import Navigator from '../components/navigator';
 import NavigatorItem from '../components/navigator-item';
+
+import { LinkContainer } from 'react-router-bootstrap';
 
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 
@@ -34,40 +34,39 @@ function mapDispatchToProps(dispatch) {
 }
 
 function renderNavbar(firstName, lastName, isLoggedIn, logout) {
-  return (<Navbar>
+  return (<Navbar inverse>
     <Logo/>
     <Navbar.Collapse>
       <Nav>
-        <NavigatorItem isVisible={ isLoggedIn } mr>
-         <Link to="/">Counter</Link>
-       </NavigatorItem>
-       <NavigatorItem isVisible={ isLoggedIn } mr>
-         <Link to="/about">About</Link>
-       </NavigatorItem>
-       <NavigatorItem isVisible={ isLoggedIn } mr>
-         <Link to="/list">List</Link>
-       </NavigatorItem>
-        <NavigatorItem isVisible={ isLoggedIn } mr>
-         <Link to="/create">Create</Link>
-       </NavigatorItem>
-        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-          <MenuItem eventKey={3.1}>Action</MenuItem>
-          <MenuItem eventKey={3.2}>Another action</MenuItem>
-          <MenuItem eventKey={3.3}>Something else here</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey={3.3}>Separated link</MenuItem>
-        </NavDropdown>
+        <NavigatorItem isVisible={ isLoggedIn } linkTo={'/list'} mr>
+            <NavItem>List</NavItem>
+        </NavigatorItem>
+        <NavigatorItem isVisible={ isLoggedIn } linkTo={'/create'} mr>
+            <NavItem>Create</NavItem>
+        </NavigatorItem>
       </Nav>
       <Nav pullRight>
-        <NavigatorItem isVisible={ isLoggedIn } mr>
-          <div data-testid="user-profile">
-            { `${ firstName } ${ lastName }` }
-          </div>
+          <NavDropdown eventKey={3} title="About" id="basic-nav-dropdown">
+              <LinkContainer to="/about">
+                  <MenuItem eventKey={3.3}>About</MenuItem>
+              </LinkContainer>
+              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+              <MenuItem divider />
+              <MenuItem eventKey={3.3}>Separated link</MenuItem>
+          </NavDropdown>
+        <NavigatorItem isVisible={ isLoggedIn } linkTo={'/profile'} mr>
+            <NavItem>
+              <div data-testid="user-profile">
+                { `${ firstName } ${ lastName }` }
+              </div>
+            </NavItem>
         </NavigatorItem>
-      <NavigatorItem isVisible={ isLoggedIn }>
-        <Button onClick={ logout } className="bg-red white">
-          Logout
-        </Button>
+      <NavigatorItem isVisible={ isLoggedIn } mr>
+          <NavItem>
+            <Button onClick={ logout } className="white">
+              Logout
+            </Button>
+        </NavItem>
       </NavigatorItem>
       </Nav>
     </Navbar.Collapse>
