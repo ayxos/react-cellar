@@ -6,14 +6,15 @@
     "node": "registry:dt/node#6.0.0+20160801161248",
     "react": "registry:dt/react#0.14.0+20160801203155",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-router": "registry:dt/react-router#2.0.0+20160813233016",
     "react-router-bootstrap": "registry:dt/react-router-bootstrap#0.0.0+20160316155526",
+    "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160724070902",
+    "react-router/history": "registry:dt/react-router/history#2.0.0+20160608102730",
     "redux": "registry:dt/redux#3.5.2+20160703092728",
     "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160728142841"
   },
   "dependencies": {
     "react-bootstrap": "github:react-bootstrap/react-bootstrap-typescript/index.d.ts",
-    "react-router": "registry:npm/react-router#2.4.0+20160811060709",
-    "react-router-redux": "registry:npm/react-router-redux#4.0.0+20160602212457",
     "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520"
   }
 }
