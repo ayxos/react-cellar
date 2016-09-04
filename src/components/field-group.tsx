@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FormGroup, FormControl} from 'react-bootstrap';
+import { FormGroup, FormControl } from 'react-bootstrap';
 
 export interface HilukMenuProps extends React.Props<any> {
   id?: string;
@@ -7,6 +7,9 @@ export interface HilukMenuProps extends React.Props<any> {
   label?: string;
   placeholder?: string;
   help?: string;
+  componentClass?: string;
+  value?: string;
+  name?: string;
 }
 
 export class FieldGroup extends React.Component<HilukMenuProps, {}> {

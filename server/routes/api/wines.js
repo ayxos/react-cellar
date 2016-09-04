@@ -10,7 +10,7 @@ module.exports = function(app, db) {
     });
 
     app.post('/api/wines', function(req, res) {
-        console.log('Wine post');
+        console.log('Wine post', req);
         console.log(req.body);
         console.log(req.user);
 

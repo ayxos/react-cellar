@@ -9,13 +9,13 @@ interface IFieldDefinition {
 
 interface IInputProps extends React.Props<any> {
   fieldDefinition?: IFieldDefinition;
-  type?: string;
   placeholder?: string;
   id?: string;
 };
 
-export default function Input({
-  type = 'text',
+export default function Textarea({
+  rows = '4',
+  cols = '50',
   placeholder = '',
   fieldDefinition = {} as IFieldDefinition,
   id = ''
@@ -28,12 +28,13 @@ export default function Input({
   } = fieldDefinition;
 
   return (
-    <input
+    <textarea
       id={ id }
-      className="block col-12 mb1 input"
-      type={ type }
+      rows={ rows }
+      cols={ cols }
+      className="block col-12 mb1 textarea"
       placeholder={ placeholder }
-      value={ type === 'file' ? undefined : value }
+      value={ value }
       onBlur={ onBlur }
       onChange={ onChange }
       onFocus={ onFocus } />
