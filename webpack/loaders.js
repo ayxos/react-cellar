@@ -1,11 +1,9 @@
 'use strict';
 
-if (process.argv.indexOf('--local') > -1) console.log('LOCAL');
-
 exports.tslint = {
   test: /\.tsx?$/,
   loader: 'tslint',
-  exclude: [/node_modules/]
+  exclude: /node_modules/,
 };
 
 exports.tsx = {
