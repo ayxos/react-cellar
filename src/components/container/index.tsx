@@ -5,13 +5,15 @@ interface IContainerProps extends React.Props<any> {
   size: number;
   center: boolean;
   testid?: string;
+  style?: any;
 };
 
 export default function Container({
   size = 1,
   center = false,
   children = null,
-  testid = ''
+  testid = '',
+  style= null
 }: IContainerProps) {
   const containerClasses = classNames('clearfix', 'px1', {
     'max-width-1': size === 1,
@@ -22,7 +24,7 @@ export default function Container({
   });
 
   return (
-    <div data-testid={ testid } className={ containerClasses }>
+    <div data-testid={ testid } className={ containerClasses } style={style}>
       { children }
     </div>
   );

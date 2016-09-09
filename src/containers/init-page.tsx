@@ -10,8 +10,24 @@ export interface ICreatePageState {
   showModal?: boolean;
 }
 
-class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
+const styles = {
+  style1: {
+    width: '80%',
+    height: '550px',
+    fontFamily: 'Andika',
+    fontSize: '36',
+    color: 'white',
+    backgroundImage: 'url(\'assets/bg.jpg\')',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    marginTop: '-19px',
+    padding: '180px',
+    textSlign: 'center',
+    textShadow: '1px 1px 1px #000'
+  }
+};
 
+class InitPage extends React.Component<ICreatePageProps, ICreatePageState> {
   componentWillMount() {
     this.setState({
       isLoading: false,
@@ -27,15 +43,11 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
   render() {
     return (
       <div>
-        <Container size={4} center>
-          <h2 className="caps">Create</h2>
-          <WineForm
-            onSubmit={ this.onSubmit }
-          />
+        <Container size={0} style={styles.style1} center>
         </Container>
       </div>
     );
   }
 }
 
-export default CreatePage;
+export default InitPage;

@@ -39,10 +39,10 @@ function renderNavbar(firstName, lastName, isLoggedIn, logout) {
     <Navbar.Collapse>
       <Nav>
         <NavigatorItem isVisible={ isLoggedIn } linkTo={'/list'} mr>
-            <NavItem>List</NavItem>
+            <NavItem>Browse Products</NavItem>
         </NavigatorItem>
         <NavigatorItem isVisible={ isLoggedIn } linkTo={'/create'} mr>
-            <NavItem>Create</NavItem>
+            <NavItem>Add Product</NavItem>
         </NavigatorItem>
       </Nav>
       <Nav pullRight>

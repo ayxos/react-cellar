@@ -14,6 +14,26 @@ export interface ICreatePageState {
   showModal?: boolean;
 }
 
+const styles = {
+  style1: {
+    width: '260px',
+    textAlign: 'center'
+  },
+  style2: {
+    height: '150px'
+  },
+  style3: {
+    float: 'left'
+  },
+  style4: {
+    border: 'none',
+    display: 'inline-block'
+  },
+  style5: {
+    width: '1024px'
+  }
+};
+
 class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
 
   componentWillMount() {
@@ -41,7 +61,23 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
       return <a href={'hola'}>{'nada'}</a>;
     }
     let lines = wines.map((wine) => {
-      return <p key={wine._id}>{wine.title}{' '}{wine.year}</p>;
+      return <li key={wine._id}
+                 className="list-group-item"
+                 style={styles.style4}
+      >
+        <a
+          href="/wines/{wine._id}"
+          style={ styles.style1 }
+          className="thumbnail plain ng-binding"
+        >
+        <div style={ styles.style2 } >
+          <img src="" height="150" width="125" alt=""/>
+        </div>
+        <h5 className="ng-binding"/>
+        {wine.year}
+        <br></br>
+        <i className="icon-globe"/>{wine.title}</a>
+      </li>;
     });
     return lines;
   }
@@ -77,33 +113,6 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
                 <a href="#">tooltip</a>
               </OverlayTrigger> here
             </p>
-
-            <hr />
-
-            <form>
-              <FieldGroup
-                id="formControlsText"
-                type="text"
-                label="Text"
-                placeholder="Enter text"
-              />
-              <FieldGroup
-                id="formControlsEmail"
-                type="email"
-                label="Email address"
-                placeholder="Enter email"
-              />
-              <FieldGroup
-                id="formControlsPassword"
-                label="Password"
-                type="password"
-              />
-              <FieldGroup
-                id="formControlsFile"
-                type="file"
-                label="File"
-              />
-            </form>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close.bind(this)}>Close</Button>
@@ -119,16 +128,17 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
     let isLoading = this.state.isLoading;
     return (
       <div>
-        <Container size={4} center>
-          <h2 className="caps">Create</h2>
-          {this.renderItems()}
+        <Container size={0} center={true} style={styles.style5}>
+          <ul className="thumbnails list-group" style={styles.style3 }>
+            {this.renderItems()}
+          </ul>
           {this.renderModal()}
-          <Button
-            bsStyle="primary"
-            disabled={isLoading}
-            onClick={!isLoading ? this.handleClick.bind(this) : null}>
-            {isLoading ? 'Loading...' : 'Loading state'}
-          </Button>
+          {/*<Button*/}
+            {/*bsStyle="primary"*/}
+            {/*disabled={isLoading}*/}
+            {/*onClick={!isLoading ? this.handleClick.bind(this) : null}>*/}
+            {/*{isLoading ? 'Loading...' : 'Loading state'}*/}
+          {/*</Button>*/}
         </Container>
       </div>
     );
