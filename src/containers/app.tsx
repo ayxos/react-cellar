@@ -94,6 +94,32 @@ class App extends React.Component<IAppProps, void> {
         <Content isVisible={ isLoggedIn }>
           { children }
         </Content>
+
+        <div className="container">
+          <p className="pull-right"><a href="/">Back Home</a></p>
+          <p>Built as a sample application with
+            <a
+              href="https://facebook.github.io/react/">
+              &nbsp;React.js
+            </a>,
+            <a href="http://twitter.github.com/bootstrap/">
+              &nbsp;Bootstrap
+            </a>,
+            <a href="http://nodejs.org/">&nbsp;Node.js</a>,
+            <a href="http://expressjs.com/">&nbsp;Express</a>, and
+            <a href="http://www.mongodb.org/">&nbsp;MongoDB</a> by&nbsp;
+            <a href="http://ayxos.com" target="_blank">
+              Marco A. Pajares</a>. Following the example of&nbsp;
+            <a href="http://coenraets.org" target="_blank">
+              Christophe Coenraets</a>.
+            <br></br>
+            The source code for this application is available in
+            <a
+              href="https://github.com/ayxos/react-cellar">
+              &nbsp;this repository
+            </a> on GitHub.
+          </p>
+        </div>
       </div>
     );
   };

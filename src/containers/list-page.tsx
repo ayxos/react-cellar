@@ -3,7 +3,6 @@ import Container from '../components/container';
 import { wines } from '../api/wine';
 import { Modal, Button, Popover, Tooltip,
   OverlayTrigger } from 'react-bootstrap';
-import { FieldGroup } from '../components/field-group';
 export interface ICreatePageProps {}
 
 export interface ICreatePageState {
@@ -125,7 +124,6 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
   }
 
   render() {
-    let isLoading = this.state.isLoading;
     return (
       <div>
         <Container size={0} center={true} style={styles.style5}>
@@ -133,12 +131,6 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
             {this.renderItems()}
           </ul>
           {this.renderModal()}
-          {/*<Button*/}
-            {/*bsStyle="primary"*/}
-            {/*disabled={isLoading}*/}
-            {/*onClick={!isLoading ? this.handleClick.bind(this) : null}>*/}
-            {/*{isLoading ? 'Loading...' : 'Loading state'}*/}
-          {/*</Button>*/}
         </Container>
       </div>
     );
