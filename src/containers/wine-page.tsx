@@ -1,17 +1,35 @@
 import * as React from 'react';
 import Container from '../components/container';
-import { setWine } from '../api/wine';
+import { getWine, setWine } from '../api/wine';
 import WineForm from '../components/wine/wine-form';
 
-export interface ICreatePageProps extends React.Props<any> {}
+export interface ICreatePageProps extends React.Props<any> {
+  params?: any;
+}
 
 export interface ICreatePageState {
   isLoading?: boolean;
   showModal?: boolean;
   files?: any;
+  wine?: any;
 }
 
 class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
+
+  findWineById(id) {
+    console.log('wine!', id);
+    getWine(id).then((wine) => {
+      console.log('ein', wine)
+      return wine;
+    });
+  };
+
+  componentDidMount() {
+    this.setState({
+      // route components are rendered with useful information, like URL params
+      wine: this.findWineById(this.props.params.wineId)
+    })
+  };
 
   componentWillMount() {
     this.setState({
@@ -22,7 +40,7 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
   };
 
   onSubmit(values) {
-    values.picture = this.state.files;
+    values.image = this.state.files;
     console.log('onsubmit', values);
     setWine(values);
   }

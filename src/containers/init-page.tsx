@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Container from '../components/container';
-import { newWine } from '../api/wine';
+import { setWine } from '../api/wine';
 
 export interface ICreatePageProps extends React.Props<any> {}
 
@@ -68,7 +68,7 @@ class InitPage extends React.Component<ICreatePageProps, ICreatePageState> {
 
   onSubmit(values) {
     console.log('onsubmit', values);
-    newWine(values);
+    setWine(values);
   }
 
   render() {

@@ -17,10 +17,13 @@ mongoose.connect(mongoConnectTo, options, function(err) {
 });
 
 var wineSchema = mongoose.Schema({
-    title: String,
+    name: String,
+    grapes: String,
+    country: String,
     region: String,
     year: Number,
-    tags: Array
+    description: String,
+    picture: String
 });
 
 module.exports = {

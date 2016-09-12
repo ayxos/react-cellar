@@ -3,6 +3,8 @@ import Container from '../components/container';
 import { wines } from '../api/wine';
 import { Modal, Button, Popover, Tooltip,
   OverlayTrigger } from 'react-bootstrap';
+import { Link } from 'react-router';
+
 export interface ICreatePageProps {}
 
 export interface ICreatePageState {
@@ -64,8 +66,7 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
                  className="list-group-item"
                  style={styles.style4}
       >
-        <a
-          href="/wines/{wine._id}"
+        <Link to={`/wine/${wine._id}`}
           style={ styles.style1 }
           className="thumbnail plain ng-binding"
         >
@@ -75,7 +76,7 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
         <h5 className="ng-binding"/>
         {wine.year}
         <br></br>
-        <i className="icon-globe"/>{wine.title}</a>
+        <i className="icon-globe"/>{wine.title}</Link>
       </li>;
     });
     return lines;
