@@ -29,7 +29,7 @@ module.exports = function(app, db) {
 
         var fileName ='';
         var wine = {};
-        if (!req.files.picture || req.files.picture.size === 0) {
+        // if (!req.files.picture || req.files.picture.size === 0) {
             fileName = 'init_data/generic.jpg';
             wine = req.body;
             wine.year = years[req.body.year];
@@ -44,45 +44,45 @@ module.exports = function(app, db) {
                     res.status(200).send({status:"OK", Object: wine});
                 }
             });
-        }
+        // }
 
-        else {
-            var file = req.files.picture;
-            console.log('REQ', req);
-            console.log('REQFILE', file);
-            var extension = file.name;
-            var i = 0, j = 0;
-            for(i = extension.length; i >= 0; i--){
-                if(extension.substring(i-1, i)==".")
-                    j = i;
-            }
-            wine = req.body;
-            wine.year = years[req.body.year];
-            var aux = new db.Wine(wine);
-            aux.save(function(err, wineFromDDBB) {
-                if (err) {
-                    res.status(500).send({status:"DDBB Err"});
-                }
-
-                fileName = './uploads/' + wine.name + '_' + wineFromDDBB._id.toString() + '.jpg';
-                fs.readFile(file.path, function (err, data) {
-                    //here get the image name and other data parameters which you are sending like image name etc.
-                    fs.writeFile(fileName, data, function (err) {});
-                    //dont forgot the delete the temp files.
-                });
-                db.Wine.findOne({_id: wineFromDDBB._id}, function (err, wineToUpdate) {
-                    console.log('yeeh!', wineToUpdate);
-                    if (err) {
-                        res.status(500).send({status:"DDBB Err"});
-                    } else {
-                        wineToUpdate.picture = fileName;
-                        console.log('updating with', wineToUpdate);
-                        wineToUpdate.save();
-                    }
-                });
-                res.status(200).send({status:"OK", Object: wineFromDDBB});
-            });
-        }
+        // else {
+        //     var file = req.files.picture;
+        //     console.log('REQ', req);
+        //     console.log('REQFILE', file);
+        //     var extension = file.name;
+        //     var i = 0, j = 0;
+        //     for(i = extension.length; i >= 0; i--){
+        //         if(extension.substring(i-1, i)==".")
+        //             j = i;
+        //     }
+        //     wine = req.body;
+        //     wine.year = years[req.body.year];
+        //     var aux = new db.Wine(wine);
+        //     aux.save(function(err, wineFromDDBB) {
+        //         if (err) {
+        //             res.status(500).send({status:"DDBB Err"});
+        //         }
+        //
+        //         fileName = './uploads/' + wine.name + '_' + wineFromDDBB._id.toString() + '.jpg';
+        //         fs.readFile(file.path, function (err, data) {
+        //             //here get the image name and other data parameters which you are sending like image name etc.
+        //             fs.writeFile(fileName, data, function (err) {});
+        //             //dont forgot the delete the temp files.
+        //         });
+        //         db.Wine.findOne({_id: wineFromDDBB._id}, function (err, wineToUpdate) {
+        //             console.log('yeeh!', wineToUpdate);
+        //             if (err) {
+        //                 res.status(500).send({status:"DDBB Err"});
+        //             } else {
+        //                 wineToUpdate.picture = fileName;
+        //                 console.log('updating with', wineToUpdate);
+        //                 wineToUpdate.save();
+        //             }
+        //         });
+        //         res.status(200).send({status:"OK", Object: wineFromDDBB});
+        //     });
+        // }
     });
 
     app.post('/api/wine/:id', function(req, res) {

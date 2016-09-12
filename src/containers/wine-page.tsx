@@ -17,25 +17,25 @@ export interface ICreatePageState {
 class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
 
   findWineById(id) {
-    console.log('wine!', id);
-    getWine(id).then((wine) => {
-      console.log('ein', wine)
-      return wine;
-    });
+    return getWine(id);
   };
 
   componentDidMount() {
-    this.setState({
-      // route components are rendered with useful information, like URL params
-      wine: this.findWineById(this.props.params.wineId)
-    })
+    this.findWineById(this.props.params.wineId).then((wine) => {
+      console.log('getwine', wine)
+      this.setState({
+        // route components are rendered with useful information, like URL params
+        wine: wine
+      });
+    });
   };
 
   componentWillMount() {
     this.setState({
       isLoading: false,
       showModal: false,
-      files: []
+      files: [],
+      wine: null
     });
   };
 
@@ -55,6 +55,7 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
         <Container size={4} center>
           <h2 className="caps">Create</h2>
           <WineForm
+            wine={this.state.wine}
             files={this.state.files}
             onChange={ this.onChange.bind(this) }
             onSubmit={ this.onSubmit.bind(this) }

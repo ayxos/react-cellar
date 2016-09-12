@@ -10,6 +10,7 @@ import FormSubmit from '../form/form-submit';
 interface ILoginFormProps {
   handleSubmit?: () => void;
   onChange?: any;
+  wine?: any;
   resetForm?: () => void;
   files?: any;
   fields?: {
@@ -41,6 +42,12 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
 
   onDrop(files) {
     this.props.onChange(files);
+  }
+
+  componentWillUpdate(){
+    console.log('stteupdate', this.props)
+    this.props.fields.country.values = 'spain';
+    console.log('stteupdate', this.props)
   }
 
   render() {
@@ -140,9 +147,7 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
               title="create"
             />
           </div>
-
         </div>
-
       </Form>
     );
   }

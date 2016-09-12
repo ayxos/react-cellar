@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f860574e-c2bd-41e5-90d9-e6301e1601aa" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/react_cellar_node_modules.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/react-cellar.iml" afterPath="$PROJECT_DIR$/.idea/react-cellar.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node-server.js" afterPath="$PROJECT_DIR$/server/node-server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/api/wines.js" afterPath="$PROJECT_DIR$/server/routes/api/wines.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/schemas/schemas.js" afterPath="$PROJECT_DIR$/server/schemas/schemas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/wine/index.ts" afterPath="$PROJECT_DIR$/src/api/wine/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/create-page.tsx" afterPath="$PROJECT_DIR$/src/containers/create-page.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/init-page.tsx" afterPath="$PROJECT_DIR$/src/containers/init-page.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/list-page.tsx" afterPath="$PROJECT_DIR$/src/containers/list-page.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/routes.tsx" afterPath="$PROJECT_DIR$/src/store/routes.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/wine/wine-form.tsx" afterPath="$PROJECT_DIR$/src/components/wine/wine-form.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/wine-page.tsx" afterPath="$PROJECT_DIR$/src/containers/wine-page.tsx" />
     </list>
     <ignored path="react-cellar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +34,7 @@
       <file leaf-file-name="init-page.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/init-page.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
+            <state relative-caret-position="840">
               <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
               <folding />
             </state>
@@ -49,7 +44,7 @@
       <file leaf-file-name="create-page.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/create-page.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="322">
               <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -62,9 +57,40 @@
         <entry file="file://$PROJECT_DIR$/src/containers/wine-page.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wine-form.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/wine/wine-form.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <folding>
+                <marker date="1473722106000" expanded="true" signature="1322:3492" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="1356:3478" ph="..." />
+                <marker date="1473722106000" expanded="false" signature="1398:1413" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="1413:2436" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="1443:1608" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="1638:1811" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="1841:2018" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2048:2221" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2251:2418" ph="..." />
+                <marker date="1473722106000" expanded="false" signature="2478:2493" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2493:3117" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2511:3100" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2568:3080" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2639:2892" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2665:2867" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="2934:3036" ph="..." />
+                <marker date="1473722106000" expanded="false" signature="3160:3175" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="3175:3463" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="3204:3377" ph="..." />
+                <marker date="1473722106000" expanded="true" signature="3403:3446" ph="..." />
               </folding>
             </state>
           </provider>
@@ -80,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wines.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wines.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/routes/api/wines.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+            <state relative-caret-position="435">
+              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -131,16 +157,16 @@
         <option value="$PROJECT_DIR$/src/containers/init-page.tsx" />
         <option value="$PROJECT_DIR$/src/containers/app.tsx" />
         <option value="$PROJECT_DIR$/src/components/form/form-input/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/wine/wine-form.tsx" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/containers/list-page.tsx" />
         <option value="$PROJECT_DIR$/src/store/routes.tsx" />
         <option value="$PROJECT_DIR$/server/node-server.js" />
         <option value="$PROJECT_DIR$/src/api/wine/index.ts" />
-        <option value="$PROJECT_DIR$/src/containers/wine-page.tsx" />
         <option value="$PROJECT_DIR$/server/schemas/schemas.js" />
         <option value="$PROJECT_DIR$/src/containers/create-page.tsx" />
         <option value="$PROJECT_DIR$/server/routes/api/wines.js" />
+        <option value="$PROJECT_DIR$/src/containers/wine-page.tsx" />
+        <option value="$PROJECT_DIR$/src/components/wine/wine-form.tsx" />
       </list>
     </option>
   </component>
@@ -184,6 +210,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,8 +300,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +310,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file:///Users/marco/projects/react-cellar/src/components/login/login-form.tsx" />
+    <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null&#10;login&#9;FILE&#9;file:///Users/marco/projects/react-cellar/src/components/login/login-form.tsx" />
     <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
@@ -294,17 +320,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -385,11 +400,12 @@
       <workItem from="1473581737284" duration="85000" />
       <workItem from="1473582817029" duration="17331000" />
       <workItem from="1473689969871" duration="903000" />
+      <workItem from="1473719355170" duration="2246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76244000" />
+    <option name="totallyTimeSpent" value="78490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -681,19 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/wine/wine-form.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/node-proxy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-278">
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,27 +748,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/wine-page.tsx">
+    <entry file="file://$PROJECT_DIR$/src/containers/init-page.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="840">
+          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/init-page.tsx">
+    <entry file="file://$PROJECT_DIR$/server/routes/api/wines.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+        <state relative-caret-position="435">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/create-page.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="322">
           <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -772,11 +774,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api/wines.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/wine-page.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/wine/wine-form.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding>
+            <marker date="1473722106000" expanded="true" signature="1322:3492" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="1356:3478" ph="..." />
+            <marker date="1473722106000" expanded="false" signature="1398:1413" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="1413:2436" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="1443:1608" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="1638:1811" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="1841:2018" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2048:2221" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2251:2418" ph="..." />
+            <marker date="1473722106000" expanded="false" signature="2478:2493" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2493:3117" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2511:3100" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2568:3080" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2639:2892" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2665:2867" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="2934:3036" ph="..." />
+            <marker date="1473722106000" expanded="false" signature="3160:3175" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="3175:3463" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="3204:3377" ph="..." />
+            <marker date="1473722106000" expanded="true" signature="3403:3446" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
