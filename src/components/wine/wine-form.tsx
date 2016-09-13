@@ -1,8 +1,7 @@
-import * as React from 'react';
 const ReduxForm = require('redux-form');
-// import * as  Dropzone from 'react-dropzone';
-const Dropzone = require('react-dropzone');
 
+import * as React from 'react';
+import * as  Dropzone from 'react-dropzone';
 import Form from '../form/';
 import FormInputGroup from '../form/form-input-group';
 import FormSubmit from '../form/form-submit';
@@ -10,6 +9,7 @@ import FormSubmit from '../form/form-submit';
 interface ILoginFormProps {
   handleSubmit?: () => void;
   onChange?: any;
+  initialValues?: any;
   wine?: any;
   resetForm?: () => void;
   files?: any;
@@ -24,7 +24,8 @@ interface ILoginFormProps {
 };
 
 interface ILoginFormStatus {
-  files: any;
+  files?: any;
+  initialValues?: any;
 };
 
 const styles = {
@@ -41,13 +42,8 @@ const styles = {
 class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
 
   onDrop(files) {
+    console.log('dropped');
     this.props.onChange(files);
-  }
-
-  componentWillUpdate(){
-    console.log('stteupdate', this.props)
-    this.props.fields.country.values = 'spain';
-    console.log('stteupdate', this.props)
   }
 
   render() {
@@ -144,8 +140,10 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
             />
 
             <FormSubmit
-              title="create"
+              title={ this.props.wine ? 'edit' : 'create' }
             />
+
+            { this.props.wine ? <button> Delete </button> : null}
           </div>
         </div>
       </Form>
@@ -153,8 +151,7 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
   }
 }
 
-
-export default ReduxForm.reduxForm({
+export default  ReduxForm.reduxForm({
   form: 'wine',
   fields: [
     'name',

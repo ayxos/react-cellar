@@ -3,6 +3,10 @@ import Container from '../components/container';
 import { getWine, setWine } from '../api/wine';
 import WineForm from '../components/wine/wine-form';
 
+const connect = require('react-redux').connect;
+
+let WineFormExtended;
+
 export interface ICreatePageProps extends React.Props<any> {
   params?: any;
 }
@@ -20,15 +24,25 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
     return getWine(id);
   };
 
-  componentDidMount() {
+  isEdit() {
+    console.log('param', this.props.params)
+    if (!Object.keys(this.props.params).length) {
+      console.log('no existe');
+      WineFormExtended = null;
+      return;
+    }
     this.findWineById(this.props.params.wineId).then((wine) => {
-      console.log('getwine', wine)
+      WineFormExtended = connect(
+        state => ({
+          initialValues: wine
+        })              // bind account loading action creator
+      )(WineForm);
+
       this.setState({
-        // route components are rendered with useful information, like URL params
         wine: wine
       });
     });
-  };
+  }
 
   componentWillMount() {
     this.setState({
@@ -46,20 +60,29 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
   }
 
   onChange(values) {
+    console.log('loaded!EEH', values);
     this.setState({files: values});
   }
 
   render() {
+    this.isEdit();
     return (
       <div>
         <Container size={4} center>
-          <h2 className="caps">Create</h2>
-          <WineForm
+          <h2 className="caps">{this.props.params ? 'Edit' : 'Create' }</h2>
+          {
+            WineFormExtended ? <WineFormExtended
+            wine={this.state.wine}
+            files={this.state.files}
+            onChange={ this.onChange.bind(this) }
+            onSubmit={ this.onSubmit.bind(this) }
+          /> : <WineForm
             wine={this.state.wine}
             files={this.state.files}
             onChange={ this.onChange.bind(this) }
             onSubmit={ this.onSubmit.bind(this) }
           />
+          }
         </Container>
       </div>
     );
@@ -67,3 +90,4 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
 }
 
 export default CreatePage;
+

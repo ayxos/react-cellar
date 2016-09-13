@@ -21,6 +21,7 @@ export function wines() {
 }
 
 export function getWine(id) {
+  console.log(id);
   return new Promise((resolve, reject) => {
     return get('/wine/' + id)
       .then(json => resolve(json))
