@@ -9,9 +9,8 @@ import FormSubmit from '../form/form-submit';
 interface ILoginFormProps {
   handleSubmit?: () => void;
   onChange?: any;
-  initialValues?: any;
-  wine?: any;
   resetForm?: () => void;
+  edit?: boolean;
   files?: any;
   fields?: {
     name: any;
@@ -25,7 +24,6 @@ interface ILoginFormProps {
 
 interface ILoginFormStatus {
   files?: any;
-  initialValues?: any;
 };
 
 const styles = {
@@ -34,6 +32,12 @@ const styles = {
   },
   style2: {
     float: 'right'
+  },
+  style3: {
+    padding: '10px',
+    height: '200px',
+    border: '2px dashed rgb(102, 102, 102)',
+    borderRadius: '5px'
   }
 };
 
@@ -110,7 +114,7 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
 
           <div className="col-5" style={styles.style2}>
             <div>
-              <Dropzone onDrop={this.onDrop.bind(this)}>
+              <Dropzone onDrop={this.onDrop.bind(this)} style={styles.style3}>
                 {this.props.files.length > 0 ?
                   <div>
                     <div>
@@ -121,9 +125,12 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
                     </div>
                   </div>
                   :
-                  <p>
-                  Try dropping files here, or click to select files to upload.
-                  </p>
+                  <div>
+                    <img id="picture" width="180" src="assets/generic.jpg"/>
+                    <p>
+                      To change the picture, drag a new picture from your file system onto the box above.
+                    </p>
+                  </div>
                 }
               </Dropzone>
 
@@ -140,10 +147,10 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
             />
 
             <FormSubmit
-              title={ this.props.wine ? 'edit' : 'create' }
+              title={ this.props.edit ? 'edit' : 'create' }
             />
 
-            { this.props.wine ? <button> Delete </button> : null}
+            { this.props.edit ? <button> Delete </button> : null}
           </div>
         </div>
       </Form>
