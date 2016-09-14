@@ -72,12 +72,11 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
           <h2 className="caps">{this.props.params ? 'Edit' : 'Create' }</h2>
           {
             WineFormExtended ? <WineFormExtended
-            wine={this.state.wine}
+            edit={true}
             files={this.state.files}
             onChange={ this.onChange.bind(this) }
             onSubmit={ this.onSubmit.bind(this) }
           /> : <WineForm
-            wine={this.state.wine}
             files={this.state.files}
             onChange={ this.onChange.bind(this) }
             onSubmit={ this.onSubmit.bind(this) }
