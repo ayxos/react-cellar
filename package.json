@@ -40,10 +40,13 @@
     "url": "https://github.com/rangle/rangle-starter/issues"
   },
   "dependencies": {
+    "busboy": "^0.2.13",
+    "connect-busboy": "0.0.2",
     "express": "^4.13.4",
     "helmet": "^2.0.0",
     "http-proxy": "^1.13.2",
     "mongoose": "^4.5.9",
+    "multiparty": "^4.1.2",
     "q": "^1.4.1",
     "react": "^15.3.0",
     "react-bootstrap": "^0.30.2",

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Container from '../components/container';
 import { setWine } from '../api/wine';
+import { Link } from 'react-router';
 
 export interface ICreatePageProps extends React.Props<any> {}
 
@@ -67,7 +68,6 @@ class InitPage extends React.Component<ICreatePageProps, ICreatePageState> {
   };
 
   onSubmit(values) {
-    console.log('onsubmit', values);
     setWine(values);
   }
 
@@ -82,17 +82,19 @@ class InitPage extends React.Component<ICreatePageProps, ICreatePageState> {
             </h3>
             <br></br>
               <div style={styles.style3}>
-                <a
+                <Link
                   className="btn btn-large"
-                  href="#wines"
+                  to="/list"
                   style={styles.style7} >
                   <img
                     src="http://nodecellar.coenraets.org/img/wine.png"
                     className="pull-left"
                     style={ styles.style2 }/>
                   Start Browsing<br/>Node Cellar
-                </a>
-                <a className="btn btn-large" href="#" style={styles.style7}>
+                </Link>
+                <a className="btn btn-large"
+                   href="https://github.com/ayxos/react-cellar"
+                   style={styles.style7}>
                   <img
                     src="http://nodecellar.coenraets.org/img/github.png"
                     className="pull-left"

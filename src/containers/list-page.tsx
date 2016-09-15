@@ -71,7 +71,15 @@ class ListPage extends React.Component<ICreatePageProps, ICreatePageState> {
           className="thumbnail plain ng-binding"
         >
         <div style={ styles.style2 } >
-          <img src="" height="150" width="125" alt=""/>
+          <img
+            src= {
+              wine.picture ? '/covers/' + wine.picture
+              : '/covers/generic.jpg'
+            }
+            height="150"
+            width="125"
+            alt=""
+          />
         </div>
         <h5 className="ng-binding"/>
         {wine.year}

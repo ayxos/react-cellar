@@ -9,8 +9,9 @@ import FormSubmit from '../form/form-submit';
 interface ILoginFormProps {
   handleSubmit?: () => void;
   onChange?: any;
+  onDelete?: any;
   resetForm?: () => void;
-  edit?: boolean;
+  edit?: any;
   files?: any;
   fields?: {
     name: any;
@@ -35,7 +36,7 @@ const styles = {
   },
   style3: {
     padding: '10px',
-    height: '200px',
+    width: '200px',
     border: '2px dashed rgb(102, 102, 102)',
     borderRadius: '5px'
   }
@@ -46,7 +47,6 @@ const styles = {
 class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
 
   onDrop(files) {
-    console.log('dropped');
     this.props.onChange(files);
   }
 
@@ -115,6 +115,7 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
           <div className="col-5" style={styles.style2}>
             <div>
               <Dropzone onDrop={this.onDrop.bind(this)} style={styles.style3}>
+
                 {this.props.files.length > 0 ?
                   <div>
                     <div>
@@ -126,14 +127,21 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
                   </div>
                   :
                   <div>
-                    <img id="picture" width="180" src="assets/generic.jpg"/>
+                    <img
+                      id="picture"
+                      width="180"
+                      src= {
+                        this.props.edit ? '/covers/' + this.props.edit
+                        : '/covers/generic.jpg'
+                      }
+                    />
                     <p>
-                      To change the picture, drag a new picture from your file system onto the box above.
+                      To change the picture, drag a new
+                      picture from your file system onto the box above.
                     </p>
                   </div>
                 }
               </Dropzone>
-
             </div>
           </div>
 
@@ -150,7 +158,10 @@ class WineForm extends React.Component<ILoginFormProps, ILoginFormStatus> {
               title={ this.props.edit ? 'edit' : 'create' }
             />
 
-            { this.props.edit ? <button> Delete </button> : null}
+            { this.props.edit ?
+              <a onClick={this.props.onDelete}> Delete </a>
+              : null
+            }
           </div>
         </div>
       </Form>

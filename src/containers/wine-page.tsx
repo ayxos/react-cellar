@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Container from '../components/container';
-import { getWine, setWine } from '../api/wine';
+import { getWine, setWine, editWine,
+  setWineImage, deleteWine } from '../api/wine';
 import WineForm from '../components/wine/wine-form';
 
 const connect = require('react-redux').connect;
@@ -24,11 +25,8 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
     return getWine(id);
   };
 
-  isEdit() {
-    console.log('param', this.props.params)
+  componentDidMount() {
     if (!Object.keys(this.props.params).length) {
-      console.log('no existe');
-      WineFormExtended = null;
       return;
     }
     this.findWineById(this.props.params.wineId).then((wine) => {
@@ -54,26 +52,41 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
   };
 
   onSubmit(values) {
-    values.image = this.state.files;
-    console.log('onsubmit', values);
-    setWine(values);
+    if (WineFormExtended) {
+      editWine(this.state.wine._id, values);
+      if (this.state.files) {
+        setWineImage(this.state.wine._id, this.state.files);
+      }
+    } else {
+      setWine(values).then((result: any) => {
+        if (this.state.files) {
+          setWineImage(result.Object._id, this.state.files);
+        }
+      });
+    }
+  }
+
+  onDelete() {
+    deleteWine(this.state.wine._id);
   }
 
   onChange(values) {
-    console.log('loaded!EEH', values);
     this.setState({files: values});
   }
 
   render() {
-    this.isEdit();
     return (
       <div>
         <Container size={4} center>
           <h2 className="caps">{this.props.params ? 'Edit' : 'Create' }</h2>
           {
             WineFormExtended ? <WineFormExtended
-            edit={true}
+            edit={
+              this.state.wine && this.state.wine.picture
+              ? this.state.wine.picture : null
+            }
             files={this.state.files}
+            onDelete={ this.onDelete.bind(this) }
             onChange={ this.onChange.bind(this) }
             onSubmit={ this.onSubmit.bind(this) }
           /> : <WineForm

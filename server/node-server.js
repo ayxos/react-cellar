@@ -8,6 +8,7 @@ const nodeAppServer = require('./node-app-server');
 const authPassport = require('./auth-passport');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const busboy = require('connect-busboy');
 const LocalStrategy = require('passport-local').Strategy;
 let users;
 
@@ -30,6 +31,10 @@ authPassport.readUsers()
 
 // Enable various security helpers.
 app.use(helmet());
+// upload files
+app.use(busboy());
+
+app.use('/covers', express.static('covers'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
