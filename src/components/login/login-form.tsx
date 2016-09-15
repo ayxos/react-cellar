@@ -59,7 +59,7 @@ class LoginForm extends React.Component<ILoginFormProps, void> {
           <Input
             type="text" fieldDefinition={ username }
             id="qa-uname-input"
-            placeholder="Username"/>
+            placeholder="type 'user'"/>
           <FormError id="qa-uname-validation"
             isVisible={ !!(username.touched && username.error) }>
             { username.error }
@@ -71,7 +71,7 @@ class LoginForm extends React.Component<ILoginFormProps, void> {
           <Input type="password"
             fieldDefinition={ password }
             id="qa-password-input"
-            placeholder="Password" />
+            placeholder="type 'pass'" />
           <FormError id="qa-password-validation"
             isVisible={ !!(password.touched && password.error) }>
             { password.error }
