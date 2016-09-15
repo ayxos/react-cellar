@@ -26,6 +26,30 @@
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <style>
+
+      .btn {
+        margin: 10px 0px;
+        color: #fff;
+        background-color: #0275d8;
+        border-color: #0275d8;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.25;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border-radius: .25rem;
+      }
+    </style>
 
     <!-- Le HTML5 shim -->
     <!--[if lt IE 9]>
@@ -62,9 +86,18 @@
                    </br>
                    Thank you.
                   </div></br>
-                  <div class="update-timestamp font-small color-secondary">
-                    <a class="color-secondary" href="http://github.com/ayxos">React repo</a>
-                  </div>
+                  <ul class="update-timestamp font-small color-secondary">
+                    <li><a class="btn">React-Cellar</a></li>
+                    <li><iframe
+                            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https%3A%2F%2Freact-cellar.herokuapp.com%2F&via=ayxos&related=react%2Ctwitter&hashtags=react%2Creact-cellar"
+                            width="140"
+                            height="28"
+                            title="Twitter Tweet Button"
+                            style="border: 0; overflow: hidden;">
+                    </iframe></li>
+                    <li><iframe src="https://ghbtns.com/github-btn.html?user=ayxos&repo=react-cellar&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe></li>
+                    <li><iframe src="https://ghbtns.com/github-btn.html?user=ayxos&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe></li>
+                  </ul>
                 </div>
               </div>
         </div>
