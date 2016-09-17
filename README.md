@@ -1,7 +1,14 @@
+# Demo
+https://react-cellar.herokuapp.com/
+
+# Intro 
+http://ayxos.com/wine-cellar-backbone-angular-react-a-tribute-to-christophe-coenraets/
 
 # React Cellar
 
 I replicated Christophe Coenraets' Wine-cellar example with React to help whoever is interested in learning how this new technology works, giving the user the chance to compare between different environments.
+
+![alt text](reactCellar.gif "React-Cellar")
 
 # Based on
 Based on "typescript-react-redux-starter"
