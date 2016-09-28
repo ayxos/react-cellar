@@ -120,6 +120,18 @@ class InitPage extends React.Component<ICreatePageProps, ICreatePageState> {
               </a>
             </li>
             <li style={styles.style5}>
+              <a 
+                 className="github-button" 
+                 href="https://github.com/ayxos/react-cellar" 
+                 data-icon="octicon-star" 
+                 data-style="mega" 
+                 data-count-href="/ayxos/react-cellar/stargazers" 
+                 data-count-api="/repos/ayxos/react-cellar#stargazers_count" 
+                 data-count-aria-label="# stargazers on GitHub" 
+                 aria-label="Star ayxos/react-cellar on GitHub">
+                Star</a>
+            </li>
+            <li style={styles.style5}>
               <a
                 className="github-button"
                 href="https://github.com/ayxos/react-cellar/fork"
