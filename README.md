@@ -12,6 +12,7 @@ I replicated Christophe Coenraets' Wine-cellar example with React to help whoeve
 
 # Based on
 Based on "typescript-react-redux-starter"
+and Redux-form (https://github.com/erikras/redux-form)
 
 # Technologies
 - Typescript
