@@ -61,6 +61,9 @@ $ npm run test:watch
 ```bash
 $ npm run cover
 ```
+## Contributing
+
+Please feel free to submit Pull Requests or open issues to improve, share your ideas/thoughts, or discuss any part of this manifesto.
 
 
 ## License
