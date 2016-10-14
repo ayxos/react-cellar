@@ -1,6 +1,7 @@
 {
-  "name": "typescript-react-redux-starter",
+  "name": "react-cellar",
   "version": "0.1.0",
+  "author": "Marco Antonio Pajares",
   "description": "A boiler-plate setup for TypeScript/React/Redux applications",
   "license": "MIT",
   "engines": {
