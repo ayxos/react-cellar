@@ -51,3 +51,5 @@ e2e/robot/test_results
 covers/
 !covers/generic.jpg
 
+# idea
+.idea/
