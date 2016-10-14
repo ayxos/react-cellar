@@ -50,3 +50,6 @@ e2e/robot/test_results
 # images
 covers/
 !covers/generic.jpg
+
+# idea
+.idea/
