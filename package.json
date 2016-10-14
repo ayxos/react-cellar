@@ -35,10 +35,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rangle/typescript-react-redux-starter.git"
+    "url": "https://github.com/ayxos/react-cellar.git"
   },
   "bugs": {
-    "url": "https://github.com/rangle/rangle-starter/issues"
+    "url": "https://github.com/ayxos/react-cellar/issues"
   },
   "dependencies": {
     "autoprefixer": "^6.3.3",
