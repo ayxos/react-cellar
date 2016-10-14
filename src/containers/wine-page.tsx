@@ -4,8 +4,8 @@ import { getWine, setWine, editWine,
   setWineImage, deleteWine } from '../api/wine';
 import WineForm from '../components/wine/wine-form';
 
+const Notification = require('react-notification').Notification;
 const connect = require('react-redux').connect;
-
 let WineFormExtended;
 
 export interface ICreatePageProps extends React.Props<any> {
@@ -17,6 +17,7 @@ export interface ICreatePageState {
   showModal?: boolean;
   files?: any;
   wine?: any;
+  showNotification?: boolean;
 }
 
 class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
@@ -31,14 +32,9 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
     }
     this.findWineById(this.props.params.wineId).then((wine) => {
       WineFormExtended = connect(
-        state => ({
-          initialValues: wine
-        })              // bind account loading action creator
+        state => ({ initialValues: wine }) // bind account loading action creator
       )(WineForm);
-
-      this.setState({
-        wine: wine
-      });
+      this.setState({ wine: wine });
     });
   }
 
@@ -47,21 +43,23 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
       isLoading: false,
       showModal: false,
       files: [],
-      wine: null
+      wine: null,
+      showNotification: false
     });
   };
 
   onSubmit(values) {
     if (WineFormExtended) {
       editWine(this.state.wine._id, values);
-      if (this.state.files) {
-        setWineImage(this.state.wine._id, this.state.files);
+      if (this.state.files) { 
+        setWineImage(this.state.wine._id, this.state.files); 
       }
     } else {
       setWine(values).then((result: any) => {
-        if (this.state.files) {
-          setWineImage(result.Object._id, this.state.files);
+        if (this.state.files) { 
+          setWineImage(result.Object._id, this.state.files); 
         }
+        this.setState({ showNotification: true });
       });
     }
   }
@@ -74,9 +72,20 @@ class CreatePage extends React.Component<ICreatePageProps, ICreatePageState> {
     this.setState({files: values});
   }
 
+  removeNotification () {
+    this.setState({ showNotification: false });
+  }
+
   render() {
     return (
       <div>
+        <Notification
+          isActive={this.state.showNotification}
+          message={'New Wine has been created'}
+          action={'Close'}
+          dismissAfter={500}
+          onClick={this.removeNotification.bind(this)}
+        />
         <Container size={4} center>
           <h2 className="caps">{this.props.params ? 'Edit' : 'Create' }</h2>
           {
