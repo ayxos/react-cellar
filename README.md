@@ -1,4 +1,6 @@
 # Demo
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ayxos/react-cellar.svg)](https://greenkeeper.io/)
 https://react-cellar.herokuapp.com/
 
 # Intro 
