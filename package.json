@@ -4,9 +4,6 @@
   "author": "Marco Antonio Pajares",
   "description": "A boiler-plate setup for TypeScript/React/Redux applications",
   "license": "MIT",
-  "engines": {
-    "node": "6"
-  },
   "scripts": {
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack -p",
